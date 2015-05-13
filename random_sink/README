@@ -1,0 +1,185 @@
+** Cycamore branch random_sink **
+
+Cyclus Core 1.2.0 (1.2.0-41-g711c2f8)
+(updated 11-Mar-2015)
+
+Dependencies:
+   Boost    1_57
+   Coin-Cbc 2.8
+   Coin-Clp 1.15
+   Hdf5     1.8.13-
+   Sqlite3  3.8.7.4
+   xml2     2.9.2
+   xml++    <2.37
+
+2015-3-12
+
+Goals:
+-----
+Create SWU-limited trading of variable amounts of HEU based on fluctuating requests
+for LEU.  What is detection limit for HEU diversion on top of LEU signal?
+
+1) Create (normal distribution) RandomSink with avg_qty = mean amount traded, sigma = standard deviation
+2) Constant HEU trade with small sigma for LEU (uncapacitated)
+3) Constant HEU request with ND-traded-LEU (capacitated)
+   	    - can we see variation in HEU supplied based on LEU qty?
+4) Iterate: high-priority EveryX HEU request with low priority ND-traded-LEU
+   	    Implementation: 3 sinks - 'Measured LEU signature' - LEU (34, 0.5, 5, 0) (qty,FWHM,pref,behav)
+	    		      	    - 'Natl LEU Variation' - HEU (1,0,0,0)
+				    - 'HEU diversion' - HEU (1,0,10,r5)
+	    - can we see signature of HEU trades in LEU signal?
+	    - what is threshold for detection for a given variance in LEU?
+	    - Parameterize meanLEU/meanHEU, sigmaLEU/meanHEU somehow scaled to capacity
+
+In ./fourier_test/ :
+
+goal	infile	   outfile 		    simID	description
+------------------------------------------------------------------------------------------------------------
+1	RS_free	   aq10_s0_free			502eb	sigma=0, LEUqty=10, HEUqty=1, SWU=1000, Sink_cap=1000, t=10
+		   					  all behav=0, all pref=0 (equivalent to Cycamore sink trading)
+1       RS_free	   aq10_s3_free_t1000		24062	LEU (sigma=3, qty=10), HEU (siqma=0, qty=1), SWU=1000, Sink_cap=1000, t=1000
+		   					  all behav=0, all pref=0 (Unconstrained, ND trading for LEU only)
+2       RS_free	   aq10_s05_free_t100		02133	LEU (sigma=0.5, qty=10), HEU (siqma=0, qty=1), SWU=1000, Sink_cap=1000, t=100
+		   				    	  all behav=0, all pref=0 (Unconstrained, ND trading for LEU only)
+2       RS_free	   aq10_s01_free_t100		60e1a	LEU (sigma=0.1, qty=10), HEU (siqma=0, qty=1), SWU=1000, Sink_cap=1000, t=100
+		   			  	  	  all behav=0, all pref=0 (Unconstrained, ND trading for LEU only)
+3       RS_swucap  LEUp_aq33_s05_swu180_t100	7e942	LEU (sigma=0.5, qty=33), HEU (siqma=0, qty=1), SWU=180, Sink_cap=1000, t=100
+		   			  	  	  all behav=0, pref=LEU (HEU drops to 0 when LEU var is large pos)
+3       RS_swucap  LEUp_aq34_s05_swu180_t100	ec661	LEU (sigma=0.5, qty=34), HEU (siqma=0, qty=1), SWU=180, Sink_cap=1000, t=100
+		   			  	  	  all behav=0, pref=LEU (HEU is zero unless LEU var is large neg)
+					
+For the cases above - calculate meanLEU/meanHEU (should be constant fn of SWU), stdevLEU/meanHEU (??)
+Signature of trade in Cyclical Variation - Fourier transform?
+Signature of trade in Random Variation - What is likelihood any given LEU qty is a normal variation? (Bayesian!)
+	  - need to make a trade of high priority HEU that causes LEU to dip independent of the natural LEU variation
+	  (make a 3rd 'HEU sink' to represent the natural variation, then add the diversion HEU sink on top of that)
+
+
+In ./fourier_test/non_determ : (qty,sigma,pref,behav)
+-----------------------------------------------------
+4	RS_3sink  HEU1p_aq33_s_05_swu180_t100_R5 35ddb 	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(1.0, 0, 10, R5),
+		  						SWU=180,Sink_cap=1000, t=100
+		  					   	HEU random trade preferred and is clear
+4	RS_3sink  HEUp_aq33_s_05_swu180_t100_R5	 7e684 	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0.03, 0, 10, R5),
+		  						SWU=180,Sink_cap=1000, t=100
+		  					   	HEU random trade preferred but is w/in noise
+4	RS_3sink  HEU03p_aq33_s_05_swu180_t100_E5 b285c	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0.03, 0, 10, E5),
+		  						SWU=180,Sink_cap=1000, t=100
+		  					   	HEU every5 trade preferred but is w/in noise
+4	RS_3sink  HEU1p_aq33_s_05_swu180_t100_E5 30910	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(1, 0, 10, E5),
+		  						SWU=180,Sink_cap=1000, t=100
+		  					   	HEU every5 trade preferred and is clear
+4	RS_3sink  HEU0p_aq33_s_05_swu180_t100_E5 b6ab0	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0, 0, 10, E5),
+		  						SWU=180,Sink_cap=1000, t=100
+		  					   	NO HEU trading, only has random LEU variation
+4	RS_3sink  HEU0.1p_aq33_s_05_swu180_t100_E5 4eae	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0.1, 0, 10, E5),
+		  						SWU=180,Sink_cap=1000, t=100
+		  					   	med. amnt HEU trade, LEU random
+4	RS_3sink  HEU0.3p_aq33_s_05_swu180_t100_E5 0c80	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0.3, 0, 10, E5),
+		  						SWU=180,Sink_cap=1000, t=100
+		  					   	increasing amnt of HEU trade, LEU random
+4	RS_3sink  no_random			  7474a	LEU(33, 0,5,0), otherwise identical to b285c
+4	RS_3sink  HEU1p_aq33_s_05_swu180_t1000_R5 6c907	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(1.0, 0, 10, R5),
+		  						SWU=180,Sink_cap=1000, t=1000
+		  					   	HEU random trade preferred and is clear (1000timesteps)
+4	RS_3sink  HEU0p_aq33_s_05_swu180_t1000_R5 41743	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0, 0, 10, R5),
+		  						SWU=180,Sink_cap=1000, t=1000
+		  					   	HEU is not traded (baseline for histogram), 1000 timesteps
+
+*****************
+Updated random_sink branch of Cycamore so that random seed is 1 by default (rather than seeded on time).  
+Now need to rerun some of the simulations to get deterministic results. (moved previous results to non_determ/ )
+*****************
+
+In ./bad_csv/ : (qty,sigma,pref,behav)
+
+goal	infile	   outfile				csv file	simID	description
+------------------------------------------------------------------------------------------------------------
+
+4	RS_3sink  HEU1p_aq33_s_05_swu180_t1009_R5	test	fD79 	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(1.0, 0, 10, R5),
+		  							SWU=180,Sink_cap=1000, t=1009
+		  					   		HEU random trade preferred and is clear (large amplitude)
+4	RS_3sink  HEU0p_aq33_s_05_swu180_t1009_R5	test2	4110 	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0, 0, 10, R5),
+		  							SWU=180,Sink_cap=1000, t=1009
+		  					   		No HEU is traded, shows signature of natural LEU variation (large amplitude)
+4	RS_3sink  test3					test3	4DE5 	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0, 0, 10, R5),
+		  							SWU=180,Sink_cap=1000, t=1009
+		  					   		(REPEAT) No HEU is traded, shows signature of natural LEU variation (large amplitude)
+4	RS_3sink  HEU03p_aq33_s_05_swu180_t100_R5	=out	a896 	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0.03, 0, 10, R5),
+		  							SWU=180,Sink_cap=1000, t=100
+		  					   		HEU random trade in the delta_LEU noise
+4	RS_3sink  HEU0p_aq33_s_05_swu180_t100_R5	=out	4d5e 	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0.03, 0, 10, R5),
+		  							SWU=180,Sink_cap=1000, t=100
+		  					   		No HEU traded
+4	RS_3sink  HEU0p_aq33_s_05_swu180_t100_E5	=out	7ae1 	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0.03, 0, 10, R5),
+		  							SWU=180,Sink_cap=1000, t=100
+		  					   		No HEU traded
+
+Summary 4-15-2015:  For some reason, the E5 cvs data from the E5 runs was bad. Don't know if it was just the csv file or also the cyclus file.
+Looking at another dataset (E5_n2), I see that the Total thruput does not show many indications of diversion where the Delta does. Maybe look
+at this all again with a larger diversion signal to make sure it's working?  All of this work is in the check_reproducibility notebook.
+
+
+4	RS_3sink  HEU06p_aq33_s_05_swu180_t100_E5	=out	a70d	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0.06, 0, 10, R5),
+		  							SWU=180,Sink_cap=1000, t=100
+		  					   		HEU every 5 trade 2x the delta_LEU noise
+4	RS_3sink  HEU04p_aq33_s_05_swu180_t100_E5	=out	a524	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0.04, 0, 10, R5),
+		  							SWU=180,Sink_cap=1000, t=100
+		  					   		HEU every 5 trade 1.3x the delta_LEU noise
+4	RS_3sink  HEU04p_aq33_s_05_swu180_t100_R5	=out	c098	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0.04, 0, 10, R5),
+		  							SWU=180,Sink_cap=1000, t=100
+		  					   		HEU Random 5 trade 1.3x the delta_LEU noise
+4	RS_3sink  HEU04p_aq33_s_05_swu180_t1009_R5	=out	db87	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0.04, 0, 10, R5),
+		  							SWU=180,Sink_cap=1000, t=1009
+		  					   		HEU Random 5 trade 1.3x the delta_LEU noise
+-----------------------
+Now Cyclist has been fixed, so I've re-run these files from scratch to make sure new tables weren't added to old sqlite files.
+In ./ , images in ./png/
+------------------------
+
+4	RS_3sink  HEU03p_aq33_s_05_swu180_t100_E5	=out	1e58	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0.03, 0, 10, R5),
+		  							SWU=180,Sink_cap=1000, t=100
+		  					   		HEU Every 5 trade at the delta_LEU noise
+4	RS_3sink  HEU0p_aq33_s_05_swu180_t100_E5	=out	d515	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0.0, 0, 10, R5),
+		  							SWU=180,Sink_cap=1000, t=100
+		  					   		No HEU traded
+
+4	RS_3sink  HEU1p_aq33_s_05_swu180_t1009_R5	=out	21a0	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(1.0, 0, 10, R5),
+		  							SWU=180,Sink_cap=1000, t=1009
+		  					   		HEU Random 5 trade Many X the delta_LEU noise
+
+4	RS_3sink  HEU03p_aq33_s_05_swu180_t100_E5	=out	bedb 	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0.03, 0, 10, R5),
+		  							SWU=180,Sink_cap=1000, t=100
+		  					   		HEU every 5 trade in the delta_LEU noise
+
+--------------
+But the files above were broken (Again?!!! - no longer deterministic. Problem wity cyclist) for some reason
+--------------
+
+
+4	RS_3sink  HEU03p_aq33_s_05_swu180_t1009_R5	=out	75d11	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(1.0, 0, 10, R5),
+		  							SWU=180,Sink_cap=1000, t=1009
+		  					   		HEU Random 5 trade Many X the delta_LEU noise
+
+4	RS_3sink  HEU0p_aq33_s_05_swu180_t1009_R5	=out	4bb45	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0.04, 0, 10, R5),
+		  							SWU=180,Sink_cap=1000, t=1009
+		  					   		No HEU traded
+
+
+4	RS_3sink  HEU03p_aq33_s_05_swu180_t100_R5	=out	aeec	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0.03, 0, 10, R5),
+		  							SWU=180,Sink_cap=1000, t=100
+		  					   		HEU Random 5 trade at the delta_LEU noise
+
+4	RS_3sink  HEU0p_aq33_s_05_swu180_t100_R5	=out	0a0a	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0.03, 0, 10, R5),
+		  							SWU=180,Sink_cap=1000, t=100
+		  					   		No HEU traded
+4	RS_3sink  HEU03p_aq33_s_05_swu180_t100_E5	=out	2ccc	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0.03, 0, 10, R5),
+		  							SWU=180,Sink_cap=1000, t=100
+		  					   		HEU EVERY 5 trade at the delta_LEU noise
+
+4	RS_3sink  HEU0p_aq33_s_05_swu180_t100_E5	=out	702f5	LEU(33, 0.5,5,0),delta_HEU(1,0,0,0),covert_HEU(0.03, 0, 10, R5),
+		  							SWU=180,Sink_cap=1000, t=100
+		  					   		No HEU traded
+
+
+
