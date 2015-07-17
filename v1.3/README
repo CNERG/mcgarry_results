@@ -1,0 +1,79 @@
+** Cycamore branch random_sink _v1.3**
+
+Cyclus Core 1.3.0 (1.3.0-rc6-31-gc99f79b)
+
+Dependencies:
+   Boost    1_57
+   Coin-Cbc 2.8
+   Coin-Clp 1.15
+   Hdf5     1.8.13-
+   Sqlite3  3.8.8.2
+   xml2     2.9.2
+   xml++    <2.37
+(updated 30-June-2015)
+
+Goals:
+-----
+1) Confirm that conversion to Cyclus v1.3 is consistent with results from v1.2
+
+Filename convention:
+--------------------
+HEU##p - HEU qty in kg (03 = 0.03kg)
+(aq33 - average quantity of requested LEU material 33kg)
+s## - sigma (gaussian variation in delta_LEU)
+swu### - swu capacity
+t### - simulation duration
+E/R# - covert demand Every # or Randomly with average frequency of #
+
+Description: LEU (34, 0.5, 5, 0) (avg qty,FWHM,pref,behav)
+
+
+6-30-2015:
+
+goal	infile	  outfile		    csv file	simID	description
+------------------------------------------------------------------------------------------------------------------
+1	RS_3sink  HEU03p_s05_swu180_t100_E5	=out	02c79a	LEU(33, 0.5,5,0),delta_LEU(1,0,0,0),
+		  							covert_HEU(0.03, 0, 10, E5), Sink_cap=1000
+		  					   		HEU Every 5 trade at the delta_LEU noise
+1	RS_3sink  HEU03p_s05_swu180_t100_R5	=out	08c01e	LEU(33, 0.5,5,0),delta_LEU(1,0,0,0),
+		  							covert_HEU(0.03, 0, 10, R5), Sink_cap=1000
+		  					   		HEU Random 5 trade at the delta_LEU noise
+
+
+
+** Files with _E5_3#.sqlite are run with behavior_fns modified so that only n1 is chosen in RNG at all times. **
+** Files with _R5_3#.sqlite are run with behavior_fns modified so that only n1 is chosen in RNG at all times. **
+
+Potential Causes of Non-Determination:
+-------------------------------------
+x RNG is not deterministic
+  -- tested directly (meg_fns/normal_dist.cc)
+x v1.2 Random Sink was also not deterministic
+  -- rebuild v1.2 and ran again. Everything was solid.
+x Cyclus v1.3 is not deterministic
+  -- rebuild cycamore v1.2 with Cyclus v1.3 and had no problems with repeatability.
+x Cyclist is writing bad CSV files
+  -- copying a raw sqlite file and reading the two versions in separate Cyclist sessions gave same result.
+x Python is plotting wrong
+  -- again, looking back at the re-made v1.2 results, everything worked fine.
+x Behavior_fn not rebuilding after changes
+  -- tried changing n1, n2 to ONLY n1 and everything changed as expected.
+? New Enrichment is not deterministic (WHY?)
+? Something else in cycamore v1.3 is not deterministic
+? Enrichment facility is not calculating max SWU correctly (unlikely, does not explain all behavior)
+
+Summary:
+-------
+EVERY: For n1 fixed, HEU is always correct. (As expected.)
+       Delta 1=2=3 but 4 and 5 are each unique.
+       Actually 4 and 5 have the same time frequency but different amplitudes.
+
+RANDOM: For n1 fixed, 1=4=5, but 2 and 3 are unique.
+	Actually 3 matches 1 from t=30-100. But not before.
+
+THEREFORE:
+- If RNG begins with HEU by default then it will always be the same for EVERY. Then delta should be the same too. NO.
+- IF RNG begins with HEU by default then it will NOT be the same for RANDOM ??
+- IF RNG sometimes begins with one and sometimes the other, then CHAOS will ensue.
+ ** HOW can I make HEU for EVERY always match but nothing else????
+

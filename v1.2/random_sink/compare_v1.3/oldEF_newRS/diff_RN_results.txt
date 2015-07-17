@@ -1,0 +1,523 @@
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs21.sqlite
+                          
+random number is: 33.8008
+random number is: 1.5
+random number is: 0
+random number is: 33.0945
+random number is: 1.5
+random number is: 33.1758
+random number is: 1.5
+random number is: 0
+random number is: 33.0295
+random number is: 1.5
+random number is: 33.1371
+random number is: 1.5
+random number is: 0
+random number is: 33.4142
+random number is: 1.5
+random number is: 33.2887
+random number is: 1.5
+random number is: 0
+random number is: 32.3253
+random number is: 1.5
+random number is: 33.4599
+random number is: 1.5
+random number is: 0
+random number is: 32.8795
+random number is: 1.5
+random number is: 0
+random number is: 32.9719
+random number is: 1.5
+random number is: 0
+random number is: 33.3781
+random number is: 1.5
+random number is: 0
+random number is: 33.1473
+random number is: 1.5
+random number is: 0
+random number is: 34.1545
+random number is: 1.5
+random number is: 0
+random number is: 32.7444
+random number is: 1.5
+random number is: 0
+random number is: 33.4238
+random number is: 1.5
+random number is: 0
+random number is: 32.7712
+random number is: 1.5
+random number is: 0
+random number is: 32.5664
+random number is: 1.5
+random number is: 0
+random number is: 33.5613
+random number is: 1.5
+random number is: 0
+random number is: 33.2071
+random number is: 1.5
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs21.sqlite
+Simulation ID: 0bad68e2-f327-4721-9c92-69b2581d449d
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs22.sqlite
+                      
+random number is: 33.8008
+random number is: 1.5
+random number is: 0
+random number is: 33.0945
+random number is: 1.5
+random number is: 33.1758
+random number is: 1.5
+random number is: 0
+random number is: 33.0295
+random number is: 1.5
+random number is: 33.1371
+random number is: 1.5
+random number is: 0
+random number is: 33.4142
+random number is: 1.5
+random number is: 33.2887
+random number is: 1.5
+random number is: 0
+random number is: 32.3253
+random number is: 1.5
+random number is: 33.4599
+random number is: 1.5
+random number is: 0
+random number is: 32.8795
+random number is: 1.5
+random number is: 0
+random number is: 32.9719
+random number is: 1.5
+random number is: 0
+random number is: 33.3781
+random number is: 1.5
+random number is: 0
+random number is: 33.1473
+random number is: 1.5
+random number is: 0
+random number is: 34.1545
+random number is: 1.5
+random number is: 0
+random number is: 32.7444
+random number is: 1.5
+random number is: 0
+random number is: 33.4238
+random number is: 1.5
+random number is: 0
+random number is: 32.7712
+random number is: 1.5
+random number is: 0
+random number is: 32.5664
+random number is: 1.5
+random number is: 0
+random number is: 33.5613
+random number is: 1.5
+random number is: 0
+random number is: 33.2071
+random number is: 1.5
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs22.sqlite
+Simulation ID: 617890de-0930-4f36-aa44-69495c11c98b
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs23.sqlite
+              :                                                               
+                                
+random number is: 33.8008
+random number is: 1.5
+random number is: 0
+random number is: 1.5
+random number is: 33.0375
+random number is: 33.1758
+random number is: 1.5
+random number is: 0
+random number is: 1.5
+random number is: 32.654
+random number is: 32.649
+random number is: 1.5
+random number is: 0
+random number is: 1.5
+random number is: 33.623
+random number is: 32.6805
+random number is: 1.5
+random number is: 0
+random number is: 0
+random number is: 1.5
+random number is: 32.9838
+random number is: 33.4599
+random number is: 1.5
+random number is: 0
+random number is: 0
+random number is: 1.5
+random number is: 33.4309
+random number is: 32.9719
+random number is: 1.5
+random number is: 0
+random number is: 1.5
+random number is: 32.4778
+random number is: 31.9058
+random number is: 1.5
+random number is: 0
+random number is: 0
+random number is: 1.5
+random number is: 32.8385
+random number is: 33.159
+random number is: 1.5
+random number is: 0
+random number is: 1.5
+random number is: 33.1931
+random number is: 32.7399
+random number is: 1.5
+random number is: 0
+random number is: 0
+random number is: 1.5
+random number is: 32.7215
+random number is: 32.8316
+random number is: 1.5
+random number is: 0
+random number is: 0
+random number is: 1.5
+random number is: 33.0529
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs23.sqlite
+Simulation ID: 79ce4cf9-fcee-4193-8b5b-574fa30eecdf
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs24.sqlite
+              :                                                               
+          .CL:CC CC             _Q     _Q  _Q_Q    _Q    _Q              _Q   
+        CC;CCCCCCCC:C;         /_\)   /_\)/_/\\)  /_\)  /_\)            /_\)  
+        CCCCCCCCCCCCCl       __O|/O___O|/O_OO|/O__O|/O__O|/O____________O|/O__
+     CCCCCCf     iCCCLCC     /////////////////////////////////////////////////
+     iCCCt  ;;;;;.  CCCC                                                      
+    CCCC  ;;;;;;;;;. CClL.                          c                         
+   CCCC ,;;       ;;: CCCC  ;                   : CCCCi                       
+    CCC ;;         ;;  CC   ;;:                CCC`   `C;                     
+  lCCC ;;              CCCC  ;;;:             :CC .;;. C;   ;    :   ;  :;;   
+  CCCC ;.              CCCC    ;;;,           CC ;    ; Ci  ;    :   ;  :  ;  
+   iCC :;               CC       ;;;,        ;C ;       CC  ;    :   ; .      
+  CCCi ;;               CCC        ;;;.      .C ;       tf  ;    :   ;  ;.    
+  CCC  ;;               CCC          ;;;;;;; fC :       lC  ;    :   ;    ;:  
+   iCf ;;               CC         :;;:      tC ;       CC  ;    :   ;     ;  
+  fCCC :;              LCCf      ;;;:         LC :.  ,: C   ;    ;   ; ;   ;  
+  CCCC  ;;             CCCC    ;;;:           CCi `;;` CC.  ;;;; :;.;.  ; ,;  
+    CCl ;;             CC    ;;;;              CCC    CCL                     
+   tCCC  ;;        ;; CCCL  ;;;                  tCCCCC.                      
+    CCCC  ;;     :;; CCCCf  ;                     ,L                          
+     lCCC   ;;;;;;  CCCL                                                      
+     CCCCCC  :;;  fCCCCC                                                      
+      . CCCC     CCCC .                                                       
+       .CCCCCCCCCCCCCi                                                        
+          iCCCCCLCf                                                           
+           .  C. ,                                                            
+              :                                                               
+random number is: 33.8008
+random number is: 1.5
+random number is: 0
+random number is: 33.0945
+random number is: 1.5
+random number is: 33.1758
+random number is: 1.5
+random number is: 0
+random number is: 33.0295
+random number is: 1.5
+random number is: 33.1371
+random number is: 1.5
+random number is: 0
+random number is: 33.4142
+random number is: 1.5
+random number is: 33.2887
+random number is: 1.5
+random number is: 0
+random number is: 32.3253
+random number is: 1.5
+random number is: 33.4599
+random number is: 1.5
+random number is: 0
+random number is: 32.8795
+random number is: 1.5
+random number is: 0
+random number is: 32.9719
+random number is: 1.5
+random number is: 0
+random number is: 33.3781
+random number is: 1.5
+random number is: 0
+random number is: 33.1473
+random number is: 1.5
+random number is: 0
+random number is: 34.1545
+random number is: 1.5
+random number is: 0
+random number is: 32.7444
+random number is: 1.5
+random number is: 0
+random number is: 33.4238
+random number is: 1.5
+random number is: 0
+random number is: 32.7712
+random number is: 1.5
+random number is: 0
+random number is: 32.5664
+random number is: 1.5
+random number is: 0
+random number is: 33.5613
+random number is: 1.5
+random number is: 0
+random number is: 33.2071
+random number is: 1.5
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs24.sqlite
+Simulation ID: e1f3e681-721f-4f96-93c1-a8c0028915ff
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs25.sqlite
+              :                                                               
+             
+              :                                                               
+random number is: 33.8008
+random number is: 1.5
+random number is: 0
+random number is: 33.0945
+random number is: 1.5
+random number is: 33.1758
+random number is: 1.5
+random number is: 0
+random number is: 33.0295
+random number is: 1.5
+random number is: 33.1371
+random number is: 1.5
+random number is: 0
+random number is: 33.4142
+random number is: 1.5
+random number is: 33.2887
+random number is: 1.5
+random number is: 0
+random number is: 32.3253
+random number is: 1.5
+random number is: 33.4599
+random number is: 1.5
+random number is: 0
+random number is: 32.8795
+random number is: 1.5
+random number is: 0
+random number is: 32.9719
+random number is: 1.5
+random number is: 0
+random number is: 33.3781
+random number is: 1.5
+random number is: 0
+random number is: 33.1473
+random number is: 1.5
+random number is: 0
+random number is: 34.1545
+random number is: 1.5
+random number is: 0
+random number is: 32.7444
+random number is: 1.5
+random number is: 0
+random number is: 33.4238
+random number is: 1.5
+random number is: 0
+random number is: 32.7712
+random number is: 1.5
+random number is: 0
+random number is: 32.5664
+random number is: 1.5
+random number is: 0
+random number is: 33.5613
+random number is: 1.5
+random number is: 0
+random number is: 33.2071
+random number is: 1.5
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs25.sqlite
+Simulation ID: 1cb45295-2af9-4e03-9360-3c8894816524
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs26.sqlite
+             
+              :                                                               
+random number is: 33.8008
+random number is: 1.5
+random number is: 0
+random number is: 33.0945
+random number is: 1.5
+random number is: 33.1758
+random number is: 1.5
+random number is: 0
+random number is: 33.0295
+random number is: 1.5
+random number is: 33.1371
+random number is: 1.5
+random number is: 0
+random number is: 33.4142
+random number is: 1.5
+random number is: 33.2887
+random number is: 1.5
+random number is: 0
+random number is: 32.3253
+random number is: 1.5
+random number is: 33.4599
+random number is: 1.5
+random number is: 0
+random number is: 32.8795
+random number is: 1.5
+random number is: 0
+random number is: 32.9719
+random number is: 1.5
+random number is: 0
+random number is: 33.3781
+random number is: 1.5
+random number is: 0
+random number is: 33.1473
+random number is: 1.5
+random number is: 0
+random number is: 34.1545
+random number is: 1.5
+random number is: 0
+random number is: 32.7444
+random number is: 1.5
+random number is: 0
+random number is: 33.4238
+random number is: 1.5
+random number is: 0
+random number is: 32.7712
+random number is: 1.5
+random number is: 0
+random number is: 32.5664
+random number is: 1.5
+random number is: 0
+random number is: 33.5613
+random number is: 1.5
+random number is: 0
+random number is: 33.2071
+random number is: 1.5
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs26.sqlite
+Simulation ID: 11d897c9-bfb4-49ab-bbc7-6dc8ee393290
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs27.sqlite
+              :                                                               
+             
+random number is: 33.8008
+random number is: 1.5
+random number is: 0
+random number is: 33.0945
+random number is: 1.5
+random number is: 33.1758
+random number is: 1.5
+random number is: 0
+random number is: 33.0295
+random number is: 1.5
+random number is: 33.1371
+random number is: 1.5
+random number is: 0
+random number is: 33.4142
+random number is: 1.5
+random number is: 33.2887
+random number is: 1.5
+random number is: 0
+random number is: 32.3253
+random number is: 1.5
+random number is: 33.4599
+random number is: 1.5
+random number is: 0
+random number is: 32.8795
+random number is: 1.5
+random number is: 0
+random number is: 32.9719
+random number is: 1.5
+random number is: 0
+random number is: 33.3781
+random number is: 1.5
+random number is: 0
+random number is: 33.1473
+random number is: 1.5
+random number is: 0
+random number is: 34.1545
+random number is: 1.5
+random number is: 0
+random number is: 32.7444
+random number is: 1.5
+random number is: 0
+random number is: 33.4238
+random number is: 1.5
+random number is: 0
+random number is: 32.7712
+random number is: 1.5
+random number is: 0
+random number is: 32.5664
+random number is: 1.5
+random number is: 0
+random number is: 33.5613
+random number is: 1.5
+random number is: 0
+random number is: 33.2071
+random number is: 1.5
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs27.sqlite
+Simulation ID: 4221b6e2-30df-4399-86ea-d0b04d4b438d
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs28.sqlite
+                    
+              :                                                               
+random number is: 33.8008
+random number is: 1.5
+random number is: 0
+random number is: 33.0945
+random number is: 1.5
+random number is: 33.1758
+random number is: 1.5
+random number is: 0
+random number is: 33.0295
+random number is: 1.5
+random number is: 33.1371
+random number is: 1.5
+random number is: 0
+random number is: 33.4142
+random number is: 1.5
+random number is: 33.2887
+random number is: 1.5
+random number is: 0
+random number is: 32.3253
+random number is: 1.5
+random number is: 33.4599
+random number is: 1.5
+random number is: 0
+random number is: 32.8795
+random number is: 1.5
+random number is: 0
+random number is: 32.9719
+random number is: 1.5
+random number is: 0
+random number is: 33.3781
+random number is: 1.5
+random number is: 0
+random number is: 33.1473
+random number is: 1.5
+random number is: 0
+random number is: 34.1545
+random number is: 1.5
+random number is: 0
+random number is: 32.7444
+random number is: 1.5
+random number is: 0
+random number is: 33.4238
+random number is: 1.5
+random number is: 0
+random number is: 32.7712
+random number is: 1.5
+random number is: 0
+random number is: 32.5664
+random number is: 1.5
+random number is: 0
+random number is: 33.5613
+random number is: 1.5
+random number is: 0
+random number is: 33.2071
+random number is: 1.5
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs28.sqlite
+Simulation ID: 18f28bab-57cc-4f3b-85ef-9eac7d1053bd
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ emacs tmp &
+[2] 59005
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ 

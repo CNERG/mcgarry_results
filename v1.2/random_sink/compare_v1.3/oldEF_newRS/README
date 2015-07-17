@@ -1,0 +1,60 @@
+10-Jul-2015
+
+Using: ./oldEF_newRS.xml
+
+Cyclus v1.2 (commit ?), Cycamore mbmcgarry/RandomSink
+(including fixes to call NormDist and EveryRandom only when needed)
+-------------------------------------------------------------------
+
+No HEU Traded (NormDist only):
+HEU0p_s05_swu180_t100_cy12_1.sqlite
+HEU0p_s05_swu180_t100_cy12_2.sqlite
+HEU0p_s05_swu180_t100_cy12_3.sqlite
+HEU0p_s05_swu180_t100_cy12_4.sqlite
+HEU0p_s05_swu180_t100_cy12_5.sqlite
+
+
+HEU Traded every 5 (NormDist only):
+HEU03p_s05_swu180_t100_cy12_E1.sqlite
+HEU03p_s05_swu180_t100_cy12_E2.sqlite
+HEU03p_s05_swu180_t100_cy12_E3.sqlite
+HEU03p_s05_swu180_t100_cy12_E4.sqlite
+HEU03p_s05_swu180_t100_cy12_E5.sqlite
+
+
+HEU Traded randomly 5 (NormDist+EveryRandom):
+HEU03p_s05_swu180_t100_cy12_R1.sqlite
+HEU03p_s05_swu180_t100_cy12_R2.sqlite
+HEU03p_s05_swu180_t100_cy12_R3.sqlite
+HEU03p_s05_swu180_t100_cy12_R4.sqlite
+HEU03p_s05_swu180_t100_cy12_R5.sqlite
+
+
+
+Cyclus v1.3 (develop as of 9-Jul), Cycamore mbmcgarry/RandomSink
+(including fixes to call NormDist and EveryRandom only when needed)
+-------------------------------------------------------------------
+
+No HEU Traded (NormDist only):
+HEU0p_s05_swu180_t100_cy13_1.sqlite
+HEU0p_s05_swu180_t100_cy13_2.sqlite
+HEU0p_s05_swu180_t100_cy13_3.sqlite
+HEU0p_s05_swu180_t100_cy13_4.sqlite
+HEU0p_s05_swu180_t100_cy13_5.sqlite
+
+
+HEU Traded every 5 (NormDist only):
+HEU03p_s05_swu180_t100_cy13_E1.sqlite
+HEU03p_s05_swu180_t100_cy13_E2.sqlite
+HEU03p_s05_swu180_t100_cy13_E3.sqlite
+HEU03p_s05_swu180_t100_cy13_E4.sqlite
+HEU03p_s05_swu180_t100_cy13_E5.sqlite
+
+
+HEU Traded randomly 5 (NormDist+EveryRandom):
+HEU03p_s05_swu180_t100_cy13_R1.sqlite
+HEU03p_s05_swu180_t100_cy13_R2.sqlite
+HEU03p_s05_swu180_t100_cy13_R3.sqlite
+HEU03p_s05_swu180_t100_cy13_R4.sqlite
+HEU03p_s05_swu180_t100_cy13_R5.sqlite
+

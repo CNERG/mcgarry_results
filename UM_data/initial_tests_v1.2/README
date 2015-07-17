@@ -1,0 +1,19 @@
+Using RandomSink v1.2 (commit 16-Jul-2015) and Cyclus v1.3 to generate a set
+of test data for UM to start working with. Features:
+
+- 100 simIDs
+- each sim is approx 2000 total timesteps - 1000 before diversion and 1000 after
+- HEU diversion frequency and natural LEU variation are both being
+time-seeded to be completely random.
+
+** These simulations are not reproducible because I've used time_seed = system
+time AND because the order of requests and bids is not currently deterministic
+in Cyclus.  Future datasets will need these issues to be resolved before any
+publications **
+
+ ~/git/data_analysis/data/UM_data/initial_tests_v1.2 (master) $ ./many_sims.sh RS_v12.xml
+
+Gzipped file HEU03_random100.gz emailed to UM group 16-Jul-2015
+
+
+

@@ -1,0 +1,567 @@
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs31.sqlite
+              :                                                               
+             :                                                               
+random number is: 33.8008
+random number is: 33.5825
+random number is: 33.3134
+random number is: 32.6678
+random number is: 32.9144
+random number is: 33.8481
+random number is: 33.0295
+random number is: 32.649
+random number is: 33.1371
+random number is: 32.2769
+random number is: 32.6494
+random number is: 33.4142
+random number is: 33.1046
+random number is: 33.2887
+random number is: 32.82
+random number is: 32.5388
+random number is: 32.779
+random number is: 33.4923
+random number is: 32.9776
+random number is: 33.0074
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs31.sqlite
+Simulation ID: 25f2a95a-fb0d-415e-a43e-9218d430afca
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs32.sqlite
+              :                                                               
+               :                                                               
+random number is: 33.8008
+random number is: 33.0874
+random number is: 33.5825
+random number is: 33.3134
+random number is: 32.6678
+random number is: 32.9144
+random number is: 33.8481
+random number is: 33.0295
+random number is: 32.649
+random number is: 33.1371
+random number is: 32.2769
+random number is: 32.6494
+random number is: 33.4142
+random number is: 33.1046
+random number is: 33.2887
+random number is: 32.82
+random number is: 32.5388
+random number is: 32.779
+random number is: 33.4923
+random number is: 32.9776
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs32.sqlite
+Simulation ID: e3f7078f-5e8f-4993-97ca-4ff08210205e
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs33.sqlite
+              :                                                               
+              :                                                               
+random number is: 33.8008
+random number is: 33.5825
+random number is: 33.3134
+random number is: 32.6678
+random number is: 32.9144
+random number is: 33.8481
+random number is: 33.0295
+random number is: 32.649
+random number is: 33.1371
+random number is: 32.2769
+random number is: 32.6494
+random number is: 33.4142
+random number is: 33.1046
+random number is: 33.2887
+random number is: 32.82
+random number is: 32.5388
+random number is: 32.779
+random number is: 33.4923
+random number is: 32.9776
+random number is: 33.0074
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs33.sqlite
+Simulation ID: 3bef447a-bc4f-4e76-bdbb-0c987d0a94ce
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs34.sqlite
+              :                                                               
+              :                                                               
+random number is: 33.8008
+random number is: 33.0874
+random number is: 33.5825
+random number is: 33.3134
+random number is: 32.6678
+random number is: 32.9144
+random number is: 33.8481
+random number is: 33.0295
+random number is: 32.649
+random number is: 33.1371
+random number is: 32.2769
+random number is: 32.6494
+random number is: 33.4142
+random number is: 33.1046
+random number is: 33.2887
+random number is: 32.82
+random number is: 32.5388
+random number is: 32.779
+random number is: 33.4923
+random number is: 32.9776
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs34.sqlite
+Simulation ID: 10e15f83-f8f3-408e-b6d9-d63ce21c6f40
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs35.sqlite
+              :                                                               
+             :                                                               
+random number is: 33.8008
+random number is: 33.0874
+random number is: 33.5825
+random number is: 33.3134
+random number is: 32.6678
+random number is: 32.9144
+random number is: 33.8481
+random number is: 33.0295
+random number is: 32.649
+random number is: 33.1371
+random number is: 32.2769
+random number is: 32.6494
+random number is: 33.4142
+random number is: 33.1046
+random number is: 33.2887
+random number is: 32.82
+random number is: 32.5388
+random number is: 32.779
+random number is: 33.4923
+random number is: 32.9776
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs35.sqlite
+Simulation ID: 62fe4013-2b6e-4894-96b3-0b89c7db33cf
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs36.sqlite
+              :                                                               
+            :                                                               
+random number is: 33.8008
+random number is: 33.0874
+random number is: 33.5825
+random number is: 33.3134
+random number is: 32.6678
+random number is: 32.9144
+random number is: 33.8481
+random number is: 33.0295
+random number is: 32.649
+random number is: 33.1371
+random number is: 32.2769
+random number is: 32.6494
+random number is: 33.4142
+random number is: 33.1046
+random number is: 33.2887
+random number is: 32.82
+random number is: 32.5388
+random number is: 32.779
+random number is: 33.4923
+random number is: 32.9776
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs36.sqlite
+Simulation ID: ce47c3ca-1381-4ab4-94c4-662b902fa73c
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs37.sqlite
+              :                                                               
+              :                                                               
+random number is: 33.8008
+random number is: 33.0874
+random number is: 33.5825
+random number is: 33.3134
+random number is: 32.6678
+random number is: 32.9144
+random number is: 33.8481
+random number is: 33.0295
+random number is: 32.649
+random number is: 33.1371
+random number is: 32.2769
+random number is: 32.6494
+random number is: 33.4142
+random number is: 33.1046
+random number is: 33.2887
+random number is: 32.82
+random number is: 32.5388
+random number is: 32.779
+random number is: 33.4923
+random number is: 32.9776
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs37.sqlite
+Simulation ID: 8765e233-6a36-4ef0-9108-e57976242cc7
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs38.sqlite
+              :                                                               
+                                                         
+              :                                                               
+random number is: 33.8008
+random number is: 33.0874
+random number is: 33.5825
+random number is: 33.3134
+random number is: 32.6678
+random number is: 32.9144
+random number is: 33.8481
+random number is: 33.0295
+random number is: 32.649
+random number is: 33.1371
+random number is: 32.2769
+random number is: 32.6494
+random number is: 33.4142
+random number is: 33.1046
+random number is: 33.2887
+random number is: 32.82
+random number is: 32.5388
+random number is: 32.779
+random number is: 33.4923
+random number is: 32.9776
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs38.sqlite
+Simulation ID: 9978f0fd-cb7e-49bc-8b38-c832fe72976c
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs39.sqlite
+              :                                                               
+                                                           
+              :                                                               
+random number is: 33.8008
+random number is: 33.0874
+random number is: 33.5825
+random number is: 33.3134
+random number is: 32.6678
+random number is: 32.9144
+random number is: 33.8481
+random number is: 33.0295
+random number is: 32.649
+random number is: 33.1371
+random number is: 32.2769
+random number is: 32.6494
+random number is: 33.4142
+random number is: 33.1046
+random number is: 33.2887
+random number is: 32.82
+random number is: 32.5388
+random number is: 32.779
+random number is: 33.4923
+random number is: 32.9776
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs39.sqlite
+Simulation ID: dba60b1f-8f6f-4ca1-8b87-1caed1d21638
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ 
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ 
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ 
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ 
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ 
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs40.sqlite
+              :                                                               
+             :                                                               
+random number is: 33.8008
+random number is: 33.0874
+random number is: 33.5825
+random number is: 33.3134
+random number is: 32.6678
+random number is: 32.9144
+random number is: 33.8481
+random number is: 33.0295
+random number is: 32.649
+random number is: 33.1371
+random number is: 32.2769
+random number is: 32.6494
+random number is: 33.4142
+random number is: 33.1046
+random number is: 33.2887
+random number is: 32.82
+random number is: 32.5388
+random number is: 32.779
+random number is: 33.4923
+random number is: 32.9776
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs40.sqlite
+Simulation ID: 018a5d4e-3dad-44d9-95ba-6546378e9495
+
+
+***********************************************	
+
+
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs52.sqlite
+              :                                                               
+           :                                                               
+****SEEDING*****
+r: 1.54303
+r: 0.268176
+random number is: 33.8008
+r: 0.320231
+random number is: 33.0874
+r: 0.256559
+random number is: 33.5825
+r: 0.810119
+random number is: 33.3134
+r: 1.30464
+r: 0.801114
+random number is: 32.6678
+r: 1.08661
+r: 0.80487
+random number is: 32.9144
+r: 0.171204
+random number is: 33.8481
+r: 1.22043
+r: 0.668871
+random number is: 33.0295
+r: 0.190135
+random number is: 32.649
+r: 0.948444
+random number is: 33.1371
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs52.sqlite
+Simulation ID: 75ffcdf6-d79a-423a-8a01-8ff3081e5077
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs52.sqlite
+              :                                                               
+              :                                                               
+****SEEDING*****
+r: 1.54303
+r: 0.268176
+random number is: 33.8008
+r: 1.13661
+r: 0.256559
+random number is: 33.5825
+r: 0.810119
+random number is: 33.3134
+r: 1.30464
+r: 0.801114
+random number is: 32.6678
+r: 1.08661
+r: 0.80487
+random number is: 32.9144
+r: 0.171204
+random number is: 33.8481
+r: 1.22043
+r: 0.668871
+random number is: 33.0295
+r: 0.190135
+random number is: 32.649
+r: 0.948444
+random number is: 33.1371
+r: 1.04209
+r: 0.188386
+random number is: 32.2769
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs52.sqlite
+Simulation ID: de19ef33-ab53-4526-9b0d-f2414232ae9b
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs52.sqlite
+              :                                                               
+               :                                                               
+****SEEDING*****
+r: 1.54303
+r: 0.268176
+random number is: 33.8008
+r: 0.320231
+random number is: 33.0874
+r: 0.256559
+random number is: 33.5825
+r: 0.810119
+random number is: 33.3134
+r: 1.30464
+r: 0.801114
+random number is: 32.6678
+r: 1.08661
+r: 0.80487
+random number is: 32.9144
+r: 0.171204
+random number is: 33.8481
+r: 1.22043
+r: 0.668871
+random number is: 33.0295
+r: 0.190135
+random number is: 32.649
+r: 0.948444
+random number is: 33.1371
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs52.sqlite
+Simulation ID: 824ea8e5-b8a2-4b0a-8622-52765b029ff5
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs52.sqlite
+                                               
+              :                                                               
+****SEEDING*****
+r: 1.54303
+r: 0.268176
+random number is: 33.8008
+r: 0.320231
+random number is: 33.0874
+r: 0.256559
+random number is: 33.5825
+r: 0.810119
+random number is: 33.3134
+r: 1.30464
+r: 0.801114
+random number is: 32.6678
+r: 1.08661
+r: 0.80487
+random number is: 32.9144
+r: 0.171204
+random number is: 33.8481
+r: 1.22043
+r: 0.668871
+random number is: 33.0295
+r: 0.190135
+random number is: 32.649
+r: 0.948444
+random number is: 33.1371
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs52.sqlite
+Simulation ID: 25b52ab3-f099-435a-b96b-c3a04beef7e1
+
+
+
+
+
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs53.sqlite
+              :                                                               
+              :                                                               
+****SEEDING*****  skipped i = 6,11
+x, y: -0.999984  -0.736924
+r: 1.54303
+x, y: 0.511211  -0.0826997
+r: 0.268176
+random number is: 33.8008
+x, y: 0.0655345  -0.562082
+r: 0.320231
+random number is: 33.0874
+x, y: 0.357729  0.358593
+r: 0.256559
+random number is: 33.5825
+x, y: 0.869386  -0.232996
+r: 0.810119
+random number is: 33.3134
+x, y: 0.661931  -0.930856
+r: 1.30464
+x, y: -0.893077  0.0594004
+r: 0.801114
+random number is: 32.6678
+x, y: 0.342299  -0.984604
+r: 1.08661
+x, y: -0.233169  -0.866316
+r: 0.80487
+random number is: 32.9144
+x, y: 0.373545  0.177953
+r: 0.171204
+random number is: 33.8481
+x, y: 0.860873  0.692334
+r: 1.22043
+x, y: 0.0538576  -0.81607
+r: 0.668871
+random number is: 33.0295
+x, y: -0.168001  0.402381
+r: 0.190135
+random number is: 32.649
+x, y: 0.820642  0.524396
+r: 0.948444
+random number is: 33.1371
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs53.sqlite
+Simulation ID: dcb105e3-c929-4e13-bea4-f32e66c44434
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs53.sqlite
+              :                                                               
+              :                                                               
+****SEEDING***** skipped i =4, 11
+x, y: -0.999984  -0.736924
+r: 1.54303
+x, y: 0.511211  -0.0826997
+r: 0.268176
+random number is: 33.8008
+x, y: -0.562082  -0.905911
+r: 1.13661
+x, y: 0.357729  0.358593
+r: 0.256559
+random number is: 33.5825
+x, y: 0.869386  -0.232996
+r: 0.810119
+random number is: 33.3134
+x, y: 0.661931  -0.930856
+r: 1.30464
+x, y: -0.893077  0.0594004
+r: 0.801114
+random number is: 32.6678
+x, y: 0.342299  -0.984604
+r: 1.08661
+x, y: -0.233169  -0.866316
+r: 0.80487
+random number is: 32.9144
+x, y: 0.373545  0.177953
+r: 0.171204
+random number is: 33.8481
+x, y: 0.860873  0.692334
+r: 1.22043
+x, y: 0.0538576  -0.81607
+r: 0.668871
+random number is: 33.0295
+x, y: -0.168001  0.402381
+r: 0.190135
+random number is: 32.649
+x, y: 0.820642  0.524396
+r: 0.948444
+random number is: 33.1371
+x, y: -0.905071  0.472164
+r: 1.04209
+x, y: -0.343532  0.265277
+r: 0.188386
+random number is: 32.2769
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs53.sqlite
+Simulation ID: 0ef2d257-5632-48fe-b2a4-6a16a4ec77f1
+(skipped i=4)
+
+
+
+mbmcgarry@dragonfly ~/git/data_analysis/data/v1.2/random_sink/compare_v1.3/oldEF_newRS (master) $ CYCLUS_DEBUG_DRE=1 cyclus oldEF_newRS.xml -o HEU0p_s05_swu180_t10_R5_rs53.sqlite
+              :                                                               
+            :                                                               
+****SEEDING*****
+x, y: -0.999984  -0.736924
+r: 1.54303
+x, y: 0.511211  -0.0826997
+r: 0.268176
+random number is: 33.8008
+x, y: -0.562082  -0.905911
+r: 1.13661
+x, y: 0.357729  0.358593
+r: 0.256559
+random number is: 33.5825
+x, y: 0.869386  -0.232996
+r: 0.810119
+random number is: 33.3134
+x, y: 0.661931  -0.930856
+r: 1.30464
+x, y: -0.893077  0.0594004
+r: 0.801114
+random number is: 32.6678
+x, y: 0.342299  -0.984604
+r: 1.08661
+x, y: -0.233169  -0.866316
+r: 0.80487
+random number is: 32.9144
+x, y: 0.373545  0.177953
+r: 0.171204
+random number is: 33.8481
+x, y: 0.860873  0.692334
+r: 1.22043
+x, y: 0.0538576  -0.81607
+r: 0.668871
+random number is: 33.0295
+x, y: -0.168001  0.402381
+r: 0.190135
+random number is: 32.649
+x, y: 0.820642  0.524396
+r: 0.948444
+random number is: 33.1371
+x, y: -0.905071  0.472164
+r: 1.04209
+x, y: -0.343532  0.265277
+r: 0.188386
+random number is: 32.2769
+
+Status: Cyclus run successful!
+Output location: HEU0p_s05_swu180_t10_R5_rs53.sqlite
+Simulation ID: 356b4f38-01dc-46a2-bc55-2fa0fd2689fc

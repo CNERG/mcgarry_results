@@ -1,0 +1,17 @@
+To run multiple simulations:
+
+./many_sims.sh RS_v12.xml
+
+
+To run the binary version of cyan (from this directory):
+
+./cyanb -db name.sqlite . . . .
+
+
+Checking whether CYAN processes the same way that Cylist does toc calculate
+inventories, and confirm that state variable time_seed works to seed RNG on
+time instead of fixed value.
+
+Analysis is recorded in ipython notebook:
+
+/git/data_analysis/test_cyan.ipynb
