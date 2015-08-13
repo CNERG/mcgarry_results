@@ -1,0 +1,319 @@
+              :                                                               
+          .CL:CC CC             _Q     _Q  _Q_Q    _Q    _Q              _Q   
+        CC;CCCCCCCC:C;         /_\)   /_\)/_/\\)  /_\)  /_\)            /_\)  
+        CCCCCCCCCCCCCl       __O|/O___O|/O_OO|/O__O|/O__O|/O____________O|/O__
+     CCCCCCf     iCCCLCC     /////////////////////////////////////////////////
+     iCCCt  ;;;;;.  CCCC                                                      
+    CCCC  ;;;;;;;;;. CClL.                          c                         
+   CCCC ,;;       ;;: CCCC  ;                   : CCCCi                       
+    CCC ;;         ;;  CC   ;;:                CCC`   `C;                     
+  lCCC ;;              CCCC  ;;;:             :CC .;;. C;   ;    :   ;  :;;   
+  CCCC ;.              CCCC    ;;;,           CC ;    ; Ci  ;    :   ;  :  ;  
+   iCC :;               CC       ;;;,        ;C ;       CC  ;    :   ; .      
+  CCCi ;;               CCC        ;;;.      .C ;       tf  ;    :   ;  ;.    
+  CCC  ;;               CCC          ;;;;;;; fC :       lC  ;    :   ;    ;:  
+   iCf ;;               CC         :;;:      tC ;       CC  ;    :   ;     ;  
+  fCCC :;              LCCf      ;;;:         LC :.  ,: C   ;    ;   ; ;   ;  
+  CCCC  ;;             CCCC    ;;;:           CCi `;;` CC.  ;;;; :;.;.  ; ,;  
+    CCl ;;             CC    ;;;;              CCC    CCL                     
+   tCCC  ;;        ;; CCCL  ;;;                  tCCCCC.                      
+    CCCC  ;;     :;; CCCCf  ;                     ,L                          
+     lCCC   ;;;;;;  CCCL                                                      
+     CCCCCC  :;;  fCCCCC                                                      
+      . CCCC     CCCC .                                                       
+       .CCCCCCCCCCCCCi                                                        
+          iCCCCCLCf                                                           
+           .  C. ,                                                            
+              :                                                               
+0.574174  0.139455
+NormalDist: 33.1115
+sink is holding0 at 0
+sink is holding0 at 0
+sink is holding0 at 0
+0.827988  0.993471
+0.274475  0.104064
+NormalDist: 32.8492
+Amt is zero because EVERY and interval > 0 
+sink is holding32.8492 at 1
+sink is holding0.0334035 at 1
+sink is holding0 at 1
+0.00614272  0.240736
+0.0523606  0.0247823
+0.515654  0.60453
+NormalDist: 33.1846
+sink is holding65.8228 at 2
+sink is holding0.0334035 at 2
+sink is holding0.03 at 2
+0.334692  0.162153
+NormalDist: 32.7655
+Amt is zero because EVERY and interval > 0 
+sink is holding98.5882 at 3
+sink is holding0.0690967 at 3
+sink is holding0.03 at 3
+0.310638  0.890767
+NormalDist: 32.8362
+sink is holding131.424 at 4
+sink is holding0.0728544 at 4
+sink is holding0.06 at 4
+0.128742  0.770991
+NormalDist: 32.7657
+Amt is zero because EVERY and interval > 0 
+sink is holding164.19 at 5
+sink is holding0.108543 at 5
+sink is holding0.06 at 5
+0.0528317  0.942845
+0.400524  0.59868
+NormalDist: 32.1993
+sink is holding196.389 at 6
+sink is holding0.129728 at 6
+sink is holding0.09 at 6
+0.0115607  0.300519
+0.822793  0.681706
+NormalDist: 33.4773
+Amt is zero because EVERY and interval > 0 
+sink is holding229.867 at 7
+sink is holding0.145947 at 7
+sink is holding0.09 at 7
+0.424633  0.813519
+NormalDist: 32.8452
+sink is holding262.712 at 8
+sink is holding0.149459 at 8
+sink is holding0.12 at 8
+0.810741  0.130675
+NormalDist: 33.121
+Amt is zero because EVERY and interval > 0 
+sink is holding295.833 at 9
+sink is holding0.175427 at 9
+sink is holding0.12 at 9
+0.254807  0.534787
+NormalDist: 32.1701
+sink is holding328.003 at 10
+sink is holding0.19741 at 10
+sink is holding0.15 at 10
+0.168935  0.29208
+NormalDist: 32.5799
+Amt is zero because EVERY and interval > 0 
+sink is holding360.583 at 11
+sink is holding0.23818 at 11
+sink is holding0.15 at 11
+0.983593  0.251967
+0.802794  0.562038
+NormalDist: 33.6794
+sink is holding393.556 at 12
+sink is holding0.23818 at 12
+sink is holding0.18 at 12
+0.171915  0.37081
+NormalDist: 32.4501
+Amt is zero because EVERY and interval > 0 
+sink is holding426.007 at 13
+sink is holding0.282502 at 13
+sink is holding0.18 at 13
+0.196265  0.627992
+NormalDist: 32.4051
+sink is holding458.412 at 14
+sink is holding0.298055 at 14
+sink is holding0.21 at 14
+0.657635  0.873877
+NormalDist: 33.1776
+Amt is zero because EVERY and interval > 0 
+sink is holding491.589 at 15
+sink is holding0.322474 at 15
+sink is holding0.21 at 15
+0.258738  0.603384
+NormalDist: 32.2621
+sink is holding523.851 at 16
+sink is holding0.341939 at 16
+sink is holding0.24 at 16
+0.0796553  0.767354
+NormalDist: 32.9488
+Amt is zero because EVERY and interval > 0 
+sink is holding556.8 at 17
+sink is holding0.372616 at 17
+sink is holding0.24 at 17
+0.915364  0.520149
+NormalDist: 33.4288
+sink is holding589.774 at 18
+sink is holding0.372616 at 18
+sink is holding0.27 at 18
+0.148184  0.52093
+NormalDist: 32.4097
+Amt is zero because EVERY and interval > 0 
+sink is holding622.183 at 19
+sink is holding0.418045 at 19
+sink is holding0.27 at 19
+0.265585  0.693823
+NormalDist: 32.4567
+sink is holding654.64 at 20
+sink is holding0.432187 at 20
+sink is holding0.3 at 20
+0.077061  0.164733
+0.67086  0.146897
+NormalDist: 33.2146
+Amt is zero because EVERY and interval > 0 
+sink is holding687.855 at 21
+sink is holding0.455594 at 21
+sink is holding0.3 at 21
+0.893956  0.713333
+NormalDist: 33.2914
+sink is holding720.828 at 22
+sink is holding0.455594 at 22
+sink is holding0.33 at 22
+0.993551  0.610961
+0.417532  0.460198
+NormalDist: 31.8266
+Amt is zero because EVERY and interval > 0 
+sink is holding752.655 at 23
+sink is holding0.516974 at 23
+sink is holding0.33 at 23
+0.547814  0.115192
+NormalDist: 33.0622
+sink is holding785.628 at 24
+sink is holding0.516974 at 24
+sink is holding0.36 at 24
+0.028154  0.183632
+0.295635  0.744027
+NormalDist: 32.5685
+Amt is zero because EVERY and interval > 0 
+sink is holding818.197 at 25
+sink is holding0.558057 at 25
+sink is holding0.36 at 25
+0.863914  0.809905
+NormalDist: 33.1615
+sink is holding851.171 at 26
+sink is holding0.558057 at 26
+sink is holding0.39 at 26
+0.0663764  0.588002
+NormalDist: 32.6573
+Amt is zero because EVERY and interval > 0 
+sink is holding883.828 at 27
+sink is holding0.596709 at 27
+sink is holding0.39 at 27
+0.54659  0.535863
+NormalDist: 34.1594
+sink is holding916.801 at 28
+sink is holding0.596709 at 28
+sink is holding0.42 at 28
+0.255761  0.567394
+NormalDist: 32.2052
+Amt is zero because EVERY and interval > 0 
+sink is holding949.007 at 29
+sink is holding0.647731 at 29
+sink is holding0.42 at 29
+0.194845  0.751993
+NormalDist: 32.6271
+sink is holding981.634 at 30
+sink is holding0.657209 at 30
+sink is holding0.45 at 30
+0.748893  0.650193
+NormalDist: 33.6305
+Amt is zero because EVERY and interval > 0 
+sink is holding1015.26 at 31
+sink is holding0.669235 at 31
+sink is holding0.45 at 31
+0.797477  0.199004
+NormalDist: 33.2871
+sink is holding1048.24 at 32
+sink is holding0.669235 at 32
+sink is holding0.48 at 32
+0.662414  0.192133
+NormalDist: 33.2808
+Amt is zero because EVERY and interval > 0 
+sink is holding1081.52 at 33
+sink is holding0.690829 at 33
+sink is holding0.48 at 33
+0.177237  0.823307
+NormalDist: 32.7877
+sink is holding1114.31 at 34
+sink is holding0.695914 at 34
+sink is holding0.51 at 34
+0.314222  0.131106
+NormalDist: 32.8034
+Amt is zero because EVERY and interval > 0 
+sink is holding1147.11 at 35
+sink is holding0.730571 at 35
+sink is holding0.51 at 35
+0.506321  0.740853
+NormalDist: 33.0224
+sink is holding1180.08 at 36
+sink is holding0.730571 at 36
+sink is holding0.54 at 36
+0.52461  0.113163
+NormalDist: 33.032
+Amt is zero because EVERY and interval > 0 
+sink is holding1213.12 at 37
+sink is holding0.758971 at 37
+sink is holding0.54 at 37
+0.93465  0.6671
+NormalDist: 33.249
+sink is holding1246.09 at 38
+sink is holding0.758971 at 38
+sink is holding0.57 at 38
+0.944903  0.986588
+0.577446  0.138851
+NormalDist: 33.1154
+Amt is zero because EVERY and interval > 0 
+sink is holding1279.2 at 39
+sink is holding0.785092 at 39
+sink is holding0.57 at 39
+0.662661  0.348115
+NormalDist: 33.6576
+sink is holding1312.18 at 40
+sink is holding0.785092 at 40
+sink is holding0.6 at 40
+0.76811  0.628315
+NormalDist: 33.6505
+Amt is zero because EVERY and interval > 0 
+sink is holding1345.83 at 41
+sink is holding0.796571 at 41
+sink is holding0.6 at 41
+0.0832265  0.787819
+0.870323  0.51409
+NormalDist: 33.5469
+sink is holding1378.8 at 42
+sink is holding0.796571 at 42
+sink is holding0.63 at 42
+0.303155  0.12848
+NormalDist: 32.8051
+Amt is zero because EVERY and interval > 0 
+sink is holding1411.61 at 43
+sink is holding0.83118 at 43
+sink is holding0.63 at 43
+0.360331  0.0907946
+NormalDist: 32.8769
+sink is holding1444.48 at 44
+sink is holding0.833826 at 44
+sink is holding0.66 at 44
+0.985048  0.697576
+0.163295  0.496677
+NormalDist: 32.3713
+Amt is zero because EVERY and interval > 0 
+sink is holding1476.86 at 45
+sink is holding0.880305 at 45
+sink is holding0.66 at 45
+0.648427  0.107496
+NormalDist: 33.1481
+sink is holding1509.83 at 46
+sink is holding0.880305 at 46
+sink is holding0.69 at 46
+0.682047  0.157425
+NormalDist: 33.2364
+Amt is zero because EVERY and interval > 0 
+sink is holding1543.07 at 47
+sink is holding0.903115 at 47
+sink is holding0.69 at 47
+0.84872  0.442433
+NormalDist: 33.5811
+sink is holding1576.04 at 48
+sink is holding0.903115 at 48
+sink is holding0.72 at 48
+0.976359  0.657909
+0.481895  0.209178
+NormalDist: 32.9543
+Amt is zero because EVERY and interval > 0 
+sink is holding1608.99 at 49
+sink is holding0.933641 at 49
+sink is holding0.72 at 49
+
+Status: Cyclus run successful!
+Output location: really_random2.sqlite
+Simulation ID: 8b981db3-a246-44ed-b161-31977352e161

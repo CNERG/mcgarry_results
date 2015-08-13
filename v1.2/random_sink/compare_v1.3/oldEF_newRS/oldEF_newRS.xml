@@ -4,7 +4,7 @@
     <startmonth>1</startmonth>
     <startyear>2000</startyear>
   </control>
-
+  
   <archetypes>
     <spec> <lib>cycamore</lib><name>Source</name> </spec>
     <spec> <lib>cycamore</lib><name>Sink</name> </spec>
@@ -66,7 +66,7 @@
 	<recipe_name>heu_recipe</recipe_name>
 	<avg_qty>0.03</avg_qty>
 	<sigma>0</sigma>
-	<social_behav>Every</social_behav>
+	<social_behav>Random</social_behav>
 	<behav_interval>5</behav_interval>
 	<user_pref>8</user_pref>
       </Sink>

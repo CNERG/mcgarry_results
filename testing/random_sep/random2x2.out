@@ -1,0 +1,257 @@
+              :                                                               
+          .CL:CC CC             _Q     _Q  _Q_Q    _Q    _Q              _Q   
+        CC;CCCCCCCC:C;         /_\)   /_\)/_/\\)  /_\)  /_\)            /_\)  
+        CCCCCCCCCCCCCl       __O|/O___O|/O_OO|/O__O|/O__O|/O____________O|/O__
+     CCCCCCf     iCCCLCC     /////////////////////////////////////////////////
+     iCCCt  ;;;;;.  CCCC                                                      
+    CCCC  ;;;;;;;;;. CClL.                          c                         
+   CCCC ,;;       ;;: CCCC  ;                   : CCCCi                       
+    CCC ;;         ;;  CC   ;;:                CCC`   `C;                     
+  lCCC ;;              CCCC  ;;;:             :CC .;;. C;   ;    :   ;  :;;   
+  CCCC ;.              CCCC    ;;;,           CC ;    ; Ci  ;    :   ;  :  ;  
+   iCC :;               CC       ;;;,        ;C ;       CC  ;    :   ; .      
+  CCCi ;;               CCC        ;;;.      .C ;       tf  ;    :   ;  ;.    
+  CCC  ;;               CCC          ;;;;;;; fC :       lC  ;    :   ;    ;:  
+   iCf ;;               CC         :;;:      tC ;       CC  ;    :   ;     ;  
+  fCCC :;              LCCf      ;;;:         LC :.  ,: C   ;    ;   ; ;   ;  
+  CCCC  ;;             CCCC    ;;;:           CCi `;;` CC.  ;;;; :;.;.  ; ,;  
+    CCl ;;             CC    ;;;;              CCC    CCL                     
+   tCCC  ;;        ;; CCCL  ;;;                  tCCCCC.                      
+    CCCC  ;;     :;; CCCCf  ;                     ,L                          
+     lCCC   ;;;;;;  CCCL                                                      
+     CCCCCC  :;;  fCCCCC                                                      
+      . CCCC     CCCC .                                                       
+       .CCCCCCCCCCCCCi                                                        
+          iCCCCCLCf                                                           
+           .  C. ,                                                            
+              :                                                               
+sink is holding0 at 0
+sink is holding0 at 0
+sink is holding0 at 0
+sink is holding0 at 0
+Starting Stream is Diverted
+Eff, sigma, freq: 0.1  -2  2
+RNG desired eff: 0.1
+EveryRandom: 0.242578
+after checks, desired eff: 0.1
+Starting Stream is Fuel
+Eff, sigma, freq: 0.8  0.1  1
+0.0134696  0.383139
+0.414653  0.067769
+NormalDist: 0.786219
+RNG desired eff: 0.786219
+Calling Every X!!
+after checks, desired eff: 0.786219
+Starting Stream is Losses
+Eff, sigma, freq: 0.05  0  1
+RNG desired eff: 0.05
+Calling Every X!!
+after checks, desired eff: 0.05
+Net eff is 0.936219
+After check: Ideal_fuel: 0.786219
+After check: Final eff: 0.936219
+sink is holding257.203 at 1
+sink is holding32.7139 at 1
+sink is holding16.3569 at 1
+sink is holding29694.7 at 1
+Starting Stream is Diverted
+Eff, sigma, freq: 0.1  -2  2
+RNG desired eff: 0.1
+EveryRandom: 0.993127
+after checks, desired eff: 0
+Starting Stream is Fuel
+Eff, sigma, freq: 0.8  0.1  1
+0.484308  0.765338
+NormalDist: 0.790614
+RNG desired eff: 0.790614
+Calling Every X!!
+after checks, desired eff: 0.790614
+Starting Stream is Losses
+Eff, sigma, freq: 0.05  0  1
+RNG desired eff: 0.05
+Calling Every X!!
+after checks, desired eff: 0.05
+Net eff is 0.840614
+After check: Ideal_fuel: 0.790614
+After check: Final eff: 0.840614
+sink is holding515.843 at 2
+sink is holding32.7139 at 2
+sink is holding32.7139 at 2
+sink is holding59420.7 at 2
+Starting Stream is Diverted
+Eff, sigma, freq: 0.1  -2  2
+RNG desired eff: 0.1
+EveryRandom: 0.0318338
+after checks, desired eff: 0.1
+Starting Stream is Fuel
+Eff, sigma, freq: 0.8  0.1  1
+0.0309355  0.93264
+0.88788  0.59133
+NormalDist: 0.892739
+RNG desired eff: 0.892739
+Calling Every X!!
+after checks, desired eff: 0.892739
+Starting Stream is Losses
+Eff, sigma, freq: 0.05  0  1
+RNG desired eff: 0.05
+Calling Every X!!
+after checks, desired eff: 0.05
+Net eff is 1.04274
+After check: Ideal_fuel: 0.85
+After check: Final eff: 1
+sink is holding793.911 at 3
+sink is holding65.4277 at 3
+sink is holding49.0708 at 3
+sink is holding89094.6 at 3
+Starting Stream is Diverted
+Eff, sigma, freq: 0.1  -2  2
+RNG desired eff: 0.1
+EveryRandom: 0.478779
+after checks, desired eff: 0.1
+Starting Stream is Fuel
+Eff, sigma, freq: 0.8  0.1  1
+0.833354  0.186335
+NormalDist: 0.843293
+RNG desired eff: 0.843293
+Calling Every X!!
+after checks, desired eff: 0.843293
+Starting Stream is Losses
+Eff, sigma, freq: 0.05  0  1
+RNG desired eff: 0.05
+Calling Every X!!
+after checks, desired eff: 0.05
+Net eff is 0.993293
+After check: Ideal_fuel: 0.843293
+After check: Final eff: 0.993293
+sink is holding1069.78 at 4
+sink is holding98.1416 at 4
+sink is holding65.4277 at 4
+sink is holding118771 at 4
+Starting Stream is Diverted
+Eff, sigma, freq: 0.1  -2  2
+RNG desired eff: 0.1
+EveryRandom: 0.735653
+after checks, desired eff: 0
+Starting Stream is Fuel
+Eff, sigma, freq: 0.8  0.1  1
+0.115053  0.698659
+NormalDist: 0.732687
+RNG desired eff: 0.732687
+Calling Every X!!
+after checks, desired eff: 0.732687
+Starting Stream is Losses
+Eff, sigma, freq: 0.05  0  1
+RNG desired eff: 0.05
+Calling Every X!!
+after checks, desired eff: 0.05
+Net eff is 0.782687
+After check: Ideal_fuel: 0.732687
+After check: Final eff: 0.782687
+sink is holding1309.48 at 5
+sink is holding98.1416 at 5
+sink is holding81.7847 at 5
+sink is holding148516 at 5
+Starting Stream is Diverted
+Eff, sigma, freq: 0.1  -2  2
+RNG desired eff: 0.1
+EveryRandom: 0.355604
+after checks, desired eff: 0.1
+Starting Stream is Fuel
+Eff, sigma, freq: 0.8  0.1  1
+0.6383  0.908211
+NormalDist: 0.82473
+RNG desired eff: 0.82473
+Calling Every X!!
+after checks, desired eff: 0.82473
+Starting Stream is Losses
+Eff, sigma, freq: 0.05  0  1
+RNG desired eff: 0.05
+Calling Every X!!
+after checks, desired eff: 0.05
+Net eff is 0.97473
+After check: Ideal_fuel: 0.82473
+After check: Final eff: 0.97473
+sink is holding1579.28 at 6
+sink is holding130.855 at 6
+sink is holding98.1416 at 6
+sink is holding178198 at 6
+Starting Stream is Diverted
+Eff, sigma, freq: 0.1  -2  2
+RNG desired eff: 0.1
+EveryRandom: 0.294
+after checks, desired eff: 0.1
+Starting Stream is Fuel
+Eff, sigma, freq: 0.8  0.1  1
+0.264972  0.377494
+NormalDist: 0.658703
+RNG desired eff: 0.658703
+Calling Every X!!
+after checks, desired eff: 0.658703
+Starting Stream is Losses
+Eff, sigma, freq: 0.05  0  1
+RNG desired eff: 0.05
+Calling Every X!!
+after checks, desired eff: 0.05
+Net eff is 0.808703
+After check: Ideal_fuel: 0.658703
+After check: Final eff: 0.808703
+sink is holding1794.76 at 7
+sink is holding163.569 at 7
+sink is holding114.499 at 7
+sink is holding207934 at 7
+Starting Stream is Diverted
+Eff, sigma, freq: 0.1  -2  2
+RNG desired eff: 0.1
+EveryRandom: 0.54162
+after checks, desired eff: 0
+Starting Stream is Fuel
+Eff, sigma, freq: 0.8  0.1  1
+0.00928182  0.999465
+0.0129019  0.842497
+0.85247  0.467011
+NormalDist: 0.91701
+RNG desired eff: 0.91701
+Calling Every X!!
+after checks, desired eff: 0.91701
+Starting Stream is Losses
+Eff, sigma, freq: 0.05  0  1
+RNG desired eff: 0.05
+Calling Every X!!
+after checks, desired eff: 0.05
+Net eff is 0.96701
+After check: Ideal_fuel: 0.91701
+After check: Final eff: 0.96701
+sink is holding2094.75 at 8
+sink is holding163.569 at 8
+sink is holding130.855 at 8
+sink is holding237619 at 8
+Starting Stream is Diverted
+Eff, sigma, freq: 0.1  -2  2
+RNG desired eff: 0.1
+EveryRandom: 0.0536072
+after checks, desired eff: 0.1
+Starting Stream is Fuel
+Eff, sigma, freq: 0.8  0.1  1
+0.976748  0.196755
+0.856973  0.144214
+0.800662  0.729398
+NormalDist: 0.884022
+RNG desired eff: 0.884022
+Calling Every X!!
+after checks, desired eff: 0.884022
+Starting Stream is Losses
+Eff, sigma, freq: 0.05  0  1
+RNG desired eff: 0.05
+Calling Every X!!
+after checks, desired eff: 0.05
+Net eff is 1.03402
+After check: Ideal_fuel: 0.85
+After check: Final eff: 1
+sink is holding2372.82 at 9
+sink is holding196.283 at 9
+sink is holding147.212 at 9
+sink is holding267293 at 9
+
+Status: Cyclus run successful!
+Output location: random2x2.sqlite
+Simulation ID: 28e87cae-b2be-4ce8-bb98-f7913dc46144

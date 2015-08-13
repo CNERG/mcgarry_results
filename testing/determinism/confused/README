@@ -1,0 +1,81 @@
+Comparing 5.out and 6.out:
+
+Instantiation (==):
+12 - NullRegion
+13 - NullInst
+14 - Source
+15 - EF
+16 - LEU Sink
+17 - delta_LEU
+18 - covert_HEU
+
+
+Deletions during Initialization and Destruction (IDs ==, ordering !=):
+(ordering also not preserved within a simulation between start and end)
+5.out:
+DEBUG3(memory):              Deleting agent 'covert_HEU' ID=8
+DEBUG3(memory):              Deleting agent 'EnrichmentFacility' ID=9
+DEBUG3(memory):              Deleting agent 'delta_LEU' ID=7
+DEBUG3(memory):              Deleting agent 'SingleInstitution' ID=10
+DEBUG3(memory):              Deleting agent 'SingleRegion' ID=12
+DEBUG3(memory):              Deleting agent 'SingleRegion' ID=11
+DEBUG3(memory):              Deleting agent 'Source' ID=5
+DEBUG3(memory):              Deleting agent 'LEU' ID=6
+
+6.out:
+DEBUG3(memory):              Deleting agent 'Source' ID=5
+DEBUG3(memory):              Deleting agent 'delta_LEU' ID=7
+DEBUG3(memory):              Deleting agent 'LEU' ID=6
+DEBUG3(memory):              Deleting agent 'SingleInstitution' ID=10
+DEBUG3(memory):              Deleting agent 'covert_HEU' ID=8
+DEBUG3(memory):              Deleting agent 'EnrichmentFacility' ID=9
+DEBUG3(memory):              Deleting agent 'SingleRegion' ID=11
+DEBUG3(memory):              Deleting agent 'SingleRegion' ID=12
+
+Ticking Order (Time 0, 1):
+Source
+EF
+LEU (33.5408 != 33.1573)
+deltaLEU (1 == 1)
+HEU (ticking, no request)
+
+
+Tocking Order:
+Source
+EF
+LEU
+Delta_LEU
+HEU
+
+** Differences **
+l841-850: Order of Adding Bid Capacities, just before 'graph translated!'
+0 - EF    	0
+6 - LEU		1
+1 - delta	6
+
+** Timestep 3, capacity orders switch to match:
+
+0  	       0
+1	       1
+6	       6
+
+** Timestep 4, switching again
+
+0	       0
+1	       6
+6	       1
+
+
+Comparing 4.out to 5.out
+-------------------------
+
+** AFter trades translated, the receiving of material is different order:
+(line 1132)
+
+5  	 4
+Source	 EF
+EF	 Source
+
+
+From SQLITE files:
+- 4 & 5 repeatible Requests, but not repeatible Bids, both within and across.

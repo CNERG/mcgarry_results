@@ -1,0 +1,1573 @@
+              :                                                               
+          .CL:CC CC             _Q     _Q  _Q_Q    _Q    _Q              _Q   
+        CC;CCCCCCCC:C;         /_\)   /_\)/_/\\)  /_\)  /_\)            /_\)  
+        CCCCCCCCCCCCCl       __O|/O___O|/O_OO|/O__O|/O__O|/O____________O|/O__
+     CCCCCCf     iCCCLCC     /////////////////////////////////////////////////
+     iCCCt  ;;;;;.  CCCC                                                      
+    CCCC  ;;;;;;;;;. CClL.                          c                         
+   CCCC ,;;       ;;: CCCC  ;                   : CCCCi                       
+    CCC ;;         ;;  CC   ;;:                CCC`   `C;                     
+  lCCC ;;              CCCC  ;;;:             :CC .;;. C;   ;    :   ;  :;;   
+  CCCC ;.              CCCC    ;;;,           CC ;    ; Ci  ;    :   ;  :  ;  
+   iCC :;               CC       ;;;,        ;C ;       CC  ;    :   ; .      
+  CCCi ;;               CCC        ;;;.      .C ;       tf  ;    :   ;  ;.    
+  CCC  ;;               CCC          ;;;;;;; fC :       lC  ;    :   ;    ;:  
+   iCf ;;               CC         :;;:      tC ;       CC  ;    :   ;     ;  
+  fCCC :;              LCCf      ;;;:         LC :.  ,: C   ;    ;   ; ;   ;  
+  CCCC  ;;             CCCC    ;;;:           CCi `;;` CC.  ;;;; :;.;.  ; ,;  
+    CCl ;;             CC    ;;;;              CCC    CCL                     
+   tCCC  ;;        ;; CCCL  ;;;                  tCCCCC.                      
+    CCCC  ;;     :;; CCCCf  ;                     ,L                          
+     lCCC   ;;;;;;  CCCL                                                      
+     CCCCCC  :;;  fCCCCC                                                      
+      . CCCC     CCCC .                                                       
+       .CCCCCCCCCCCCCi                                                        
+          iCCCCCLCf                                                           
+           .  C. ,                                                            
+              :                                                               
+DEBUG5(core  ):                  Parsing the snippet: <simulation>
+  <control>
+    <duration>5</duration>
+    <startmonth>1</startmonth>
+    <startyear>2000</startyear>
+  </control>
+
+  <archetypes>
+    <spec> <lib>cycamore</lib><name>Source</name> </spec>
+    <spec> <lib>cycamore</lib><name>Sink</name> </spec>
+    <spec> <lib>cycamore</lib><name>EnrichmentFacility</name> </spec>
+    <spec><lib>agents</lib><name>NullRegion</name></spec>
+    <spec><lib>agents</lib><name>NullInst</name></spec>
+ </archetypes>
+
+  <facility>
+    <name>Source</name>
+    <config>
+      <Source>
+        <out_commod>nat_uranium</out_commod>
+        <recipe_name>nat_u_recipe</recipe_name>
+        <capacity>1000.0</capacity>
+      </Source>
+    </config>
+  </facility>
+
+  <facility>
+    <name>LEU</name>
+    <config>
+      <Sink>
+        <in_commods>
+	  <val>leu</val>
+	</in_commods>
+	<recipe_name>leu_recipe</recipe_name>
+	<social_behav>None</social_behav>
+	<user_pref>6</user_pref>
+	<avg_qty>33</avg_qty>
+	<sigma>0.5</sigma>
+	<time_seed>1</time_seed>
+      </Sink>
+    </config>
+  </facility>
+
+  <facility>
+    <name>delta_LEU</name>
+    <config>
+      <Sink>
+        <in_commods>
+	  <val>heu</val>
+	</in_commods>
+	<recipe_name>heu_recipe</recipe_name>
+	<avg_qty>1.0</avg_qty>
+	<sigma>0</sigma>
+	<social_behav>None</social_behav>
+	<user_pref>1</user_pref>
+      </Sink>
+    </config>
+  </facility>
+
+ <facility>
+    <name>covert_HEU</name>
+    <config>
+      <Sink>
+        <in_commods>
+	  <val>heu</val>
+	</in_commods>
+	<recipe_name>heu_recipe</recipe_name>
+	<avg_qty>0.03</avg_qty>
+	<sigma>0</sigma>
+	<social_behav>Random</social_behav>
+	<behav_interval>5</behav_interval>
+	<user_pref>8</user_pref>
+	<t_trade>20</t_trade>
+	<time_seed>1</time_seed>
+      </Sink>
+    </config>
+  </facility>
+
+  <facility>
+    <name>EnrichmentFacility</name>
+    <config>
+      <EnrichmentFacility>
+        <in_commod>nat_uranium</in_commod>
+	<in_recipe>nat_u_recipe</in_recipe>
+	<tails_assay>0.003</tails_assay>
+	<social_behav>0</social_behav>
+	<out_commods>
+          <val>leu</val>
+          <val>heu</val>
+	</out_commods>
+	<swu_capacity>180.0</swu_capacity>
+       </EnrichmentFacility>
+    </config>
+  </facility>
+
+  <recipe>
+    <name>nat_u_recipe</name>
+    <basis>atom</basis>
+    <nuclide> <id>922350000</id> <comp>0.0071</comp> </nuclide>
+    <nuclide> <id>922380000</id> <comp>0.993</comp> </nuclide>
+  </recipe>
+ 
+ <recipe>
+    <name>leu_recipe</name>
+    <basis>atom</basis>
+    <nuclide> <id>922350000</id> <comp>0.04</comp> </nuclide>
+    <nuclide> <id>922380000</id> <comp>0.96</comp> </nuclide>
+  </recipe>
+ <recipe>
+    <name>heu_recipe</name>
+    <basis>atom</basis>
+    <nuclide> <id>922350000</id> <comp>0.90</comp> </nuclide>
+    <nuclide> <id>922380000</id> <comp>0.10</comp> </nuclide>
+  </recipe>
+
+
+  <region>
+   <name>SingleRegion</name>
+   <config><NullRegion/></config>
+   <institution>
+     <name>SingleInstitution</name>
+     <initialfacilitylist>
+       <entry>
+	 <prototype>Source</prototype>
+	 <number>1</number>
+       </entry>
+       <entry>
+	 <prototype>EnrichmentFacility</prototype>
+	 <number>1</number>
+       </entry>
+       <entry>
+ 	 <prototype>LEU</prototype>
+	 <number>1</number>
+       </entry>
+       <entry>
+ 	 <prototype>delta_LEU</prototype>
+	 <number>1</number>
+       </entry>
+       <entry>
+ 	 <prototype>covert_HEU</prototype>
+	 <number>1</number>
+       </entry>
+     </initialfacilitylist>
+     <config><NullInst/></config>
+   </institution>
+ </region>
+
+ 
+</simulation>
+DEBUG5(core  ):                  Parsing the snippet: <simulation>
+  <control>
+    <duration>5</duration>
+    <startmonth>1</startmonth>
+    <startyear>2000</startyear>
+  </control>
+
+  <archetypes>
+    <spec> <lib>cycamore</lib><name>Source</name> </spec>
+    <spec> <lib>cycamore</lib><name>Sink</name> </spec>
+    <spec> <lib>cycamore</lib><name>EnrichmentFacility</name> </spec>
+    <spec><lib>agents</lib><name>NullRegion</name></spec>
+    <spec><lib>agents</lib><name>NullInst</name></spec>
+ </archetypes>
+
+  <facility>
+    <name>Source</name>
+    <config>
+      <Source>
+        <out_commod>nat_uranium</out_commod>
+        <recipe_name>nat_u_recipe</recipe_name>
+        <capacity>1000.0</capacity>
+      </Source>
+    </config>
+  </facility>
+
+  <facility>
+    <name>LEU</name>
+    <config>
+      <Sink>
+        <in_commods>
+	  <val>leu</val>
+	</in_commods>
+	<recipe_name>leu_recipe</recipe_name>
+	<social_behav>None</social_behav>
+	<user_pref>6</user_pref>
+	<avg_qty>33</avg_qty>
+	<sigma>0.5</sigma>
+	<time_seed>1</time_seed>
+      </Sink>
+    </config>
+  </facility>
+
+  <facility>
+    <name>delta_LEU</name>
+    <config>
+      <Sink>
+        <in_commods>
+	  <val>heu</val>
+	</in_commods>
+	<recipe_name>heu_recipe</recipe_name>
+	<avg_qty>1.0</avg_qty>
+	<sigma>0</sigma>
+	<social_behav>None</social_behav>
+	<user_pref>1</user_pref>
+      </Sink>
+    </config>
+  </facility>
+
+ <facility>
+    <name>covert_HEU</name>
+    <config>
+      <Sink>
+        <in_commods>
+	  <val>heu</val>
+	</in_commods>
+	<recipe_name>heu_recipe</recipe_name>
+	<avg_qty>0.03</avg_qty>
+	<sigma>0</sigma>
+	<social_behav>Random</social_behav>
+	<behav_interval>5</behav_interval>
+	<user_pref>8</user_pref>
+	<t_trade>20</t_trade>
+	<time_seed>1</time_seed>
+      </Sink>
+    </config>
+  </facility>
+
+  <facility>
+    <name>EnrichmentFacility</name>
+    <config>
+      <EnrichmentFacility>
+        <in_commod>nat_uranium</in_commod>
+	<in_recipe>nat_u_recipe</in_recipe>
+	<tails_assay>0.003</tails_assay>
+	<social_behav>0</social_behav>
+	<out_commods>
+          <val>leu</val>
+          <val>heu</val>
+	</out_commods>
+	<swu_capacity>180.0</swu_capacity>
+       </EnrichmentFacility>
+    </config>
+  </facility>
+
+  <recipe>
+    <name>nat_u_recipe</name>
+    <basis>atom</basis>
+    <nuclide> <id>922350000</id> <comp>0.0071</comp> </nuclide>
+    <nuclide> <id>922380000</id> <comp>0.993</comp> </nuclide>
+  </recipe>
+ 
+ <recipe>
+    <name>leu_recipe</name>
+    <basis>atom</basis>
+    <nuclide> <id>922350000</id> <comp>0.04</comp> </nuclide>
+    <nuclide> <id>922380000</id> <comp>0.96</comp> </nuclide>
+  </recipe>
+ <recipe>
+    <name>heu_recipe</name>
+    <basis>atom</basis>
+    <nuclide> <id>922350000</id> <comp>0.90</comp> </nuclide>
+    <nuclide> <id>922380000</id> <comp>0.10</comp> </nuclide>
+  </recipe>
+
+
+  <region>
+   <name>SingleRegion</name>
+   <config><NullRegion/></config>
+   <institution>
+     <name>SingleInstitution</name>
+     <initialfacilitylist>
+       <entry>
+	 <prototype>Source</prototype>
+	 <number>1</number>
+       </entry>
+       <entry>
+	 <prototype>EnrichmentFacility</prototype>
+	 <number>1</number>
+       </entry>
+       <entry>
+ 	 <prototype>LEU</prototype>
+	 <number>1</number>
+       </entry>
+       <entry>
+ 	 <prototype>delta_LEU</prototype>
+	 <number>1</number>
+       </entry>
+       <entry>
+ 	 <prototype>covert_HEU</prototype>
+	 <number>1</number>
+       </entry>
+     </initialfacilitylist>
+     <config><NullInst/></config>
+   </institution>
+ </region>
+
+ 
+</simulation>
+DEBUG5(core  ):                  Parsing the snippet: <simulation>
+  <control>
+    <duration>5</duration>
+    <startmonth>1</startmonth>
+    <startyear>2000</startyear>
+  </control>
+
+  <archetypes>
+    <spec> <lib>cycamore</lib><name>Source</name> </spec>
+    <spec> <lib>cycamore</lib><name>Sink</name> </spec>
+    <spec> <lib>cycamore</lib><name>EnrichmentFacility</name> </spec>
+    <spec><lib>agents</lib><name>NullRegion</name></spec>
+    <spec><lib>agents</lib><name>NullInst</name></spec>
+ </archetypes>
+
+  <facility>
+    <name>Source</name>
+    <config>
+      <Source>
+        <out_commod>nat_uranium</out_commod>
+        <recipe_name>nat_u_recipe</recipe_name>
+        <capacity>1000.0</capacity>
+      </Source>
+    </config>
+  </facility>
+
+  <facility>
+    <name>LEU</name>
+    <config>
+      <Sink>
+        <in_commods>
+	  <val>leu</val>
+	</in_commods>
+	<recipe_name>leu_recipe</recipe_name>
+	<social_behav>None</social_behav>
+	<user_pref>6</user_pref>
+	<avg_qty>33</avg_qty>
+	<sigma>0.5</sigma>
+	<time_seed>1</time_seed>
+      </Sink>
+    </config>
+  </facility>
+
+  <facility>
+    <name>delta_LEU</name>
+    <config>
+      <Sink>
+        <in_commods>
+	  <val>heu</val>
+	</in_commods>
+	<recipe_name>heu_recipe</recipe_name>
+	<avg_qty>1.0</avg_qty>
+	<sigma>0</sigma>
+	<social_behav>None</social_behav>
+	<user_pref>1</user_pref>
+      </Sink>
+    </config>
+  </facility>
+
+ <facility>
+    <name>covert_HEU</name>
+    <config>
+      <Sink>
+        <in_commods>
+	  <val>heu</val>
+	</in_commods>
+	<recipe_name>heu_recipe</recipe_name>
+	<avg_qty>0.03</avg_qty>
+	<sigma>0</sigma>
+	<social_behav>Random</social_behav>
+	<behav_interval>5</behav_interval>
+	<user_pref>8</user_pref>
+	<t_trade>20</t_trade>
+	<time_seed>1</time_seed>
+      </Sink>
+    </config>
+  </facility>
+
+  <facility>
+    <name>EnrichmentFacility</name>
+    <config>
+      <EnrichmentFacility>
+        <in_commod>nat_uranium</in_commod>
+	<in_recipe>nat_u_recipe</in_recipe>
+	<tails_assay>0.003</tails_assay>
+	<social_behav>0</social_behav>
+	<out_commods>
+          <val>leu</val>
+          <val>heu</val>
+	</out_commods>
+	<swu_capacity>180.0</swu_capacity>
+       </EnrichmentFacility>
+    </config>
+  </facility>
+
+  <recipe>
+    <name>nat_u_recipe</name>
+    <basis>atom</basis>
+    <nuclide> <id>922350000</id> <comp>0.0071</comp> </nuclide>
+    <nuclide> <id>922380000</id> <comp>0.993</comp> </nuclide>
+  </recipe>
+ 
+ <recipe>
+    <name>leu_recipe</name>
+    <basis>atom</basis>
+    <nuclide> <id>922350000</id> <comp>0.04</comp> </nuclide>
+    <nuclide> <id>922380000</id> <comp>0.96</comp> </nuclide>
+  </recipe>
+ <recipe>
+    <name>heu_recipe</name>
+    <basis>atom</basis>
+    <nuclide> <id>922350000</id> <comp>0.90</comp> </nuclide>
+    <nuclide> <id>922380000</id> <comp>0.10</comp> </nuclide>
+  </recipe>
+
+
+  <region>
+   <name>SingleRegion</name>
+   <config><NullRegion/></config>
+   <institution>
+     <name>SingleInstitution</name>
+     <initialfacilitylist>
+       <entry>
+	 <prototype>Source</prototype>
+	 <number>1</number>
+       </entry>
+       <entry>
+	 <prototype>EnrichmentFacility</prototype>
+	 <number>1</number>
+       </entry>
+       <entry>
+ 	 <prototype>LEU</prototype>
+	 <number>1</number>
+       </entry>
+       <entry>
+ 	 <prototype>delta_LEU</prototype>
+	 <number>1</number>
+       </entry>
+       <entry>
+ 	 <prototype>covert_HEU</prototype>
+	 <number>1</number>
+       </entry>
+     </initialfacilitylist>
+     <config><NullInst/></config>
+   </institution>
+ </region>
+
+ 
+</simulation>
+DEBUG3(memory):              Agent ID=0, ptr=0x7f8d7c0ad788 created.
+DEBUG3(memory):              Deleting agent '' ID=0
+DEBUG3(memory):              Agent ID=1, ptr=0x7f8d7c0ad9d8 created.
+DEBUG3(memory):              Deleting agent '' ID=1
+DEBUG3(memory):              Agent ID=2, ptr=0x7f8d7c0ad9d8 created.
+DEBUG3(memory):              Deleting agent '' ID=2
+DEBUG3(memory):              Agent ID=3, ptr=0x7f8d7c0b0770 created.
+DEBUG3(memory):              Deleting agent '' ID=3
+DEBUG3(memory):              Agent ID=4, ptr=0x7f8d7c0b0920 created.
+DEBUG3(memory):              Deleting agent '' ID=4
+DEBUG3(core  ):              loading recipe: nat_u_recipe
+DEBUG3(core  ):                Nuclide: 922350000 Value: 0.0071
+DEBUG3(core  ):                Nuclide: 922380000 Value: 0.993
+DEBUG3(core  ):              loading recipe: leu_recipe
+DEBUG3(core  ):                Nuclide: 922350000 Value: 0.04
+DEBUG3(core  ):                Nuclide: 922380000 Value: 0.96
+DEBUG3(core  ):              loading recipe: heu_recipe
+DEBUG3(core  ):                Nuclide: 922350000 Value: 0.9
+DEBUG3(core  ):                Nuclide: 922380000 Value: 0.1
+DEBUG5(core  ):                  Parsing the snippet: <simulation>
+  <control>
+    <duration>5</duration>
+    <startmonth>1</startmonth>
+    <startyear>2000</startyear>
+  </control>
+
+  <archetypes>
+    <spec> <lib>cycamore</lib><name>Source</name> </spec>
+    <spec> <lib>cycamore</lib><name>Sink</name> </spec>
+    <spec> <lib>cycamore</lib><name>EnrichmentFacility</name> </spec>
+    <spec><lib>agents</lib><name>NullRegion</name></spec>
+    <spec><lib>agents</lib><name>NullInst</name></spec>
+ </archetypes>
+
+  <facility>
+    <name>Source</name>
+    <config>
+      <Source>
+        <out_commod>nat_uranium</out_commod>
+        <recipe_name>nat_u_recipe</recipe_name>
+        <capacity>1000.0</capacity>
+      </Source>
+    </config>
+  </facility>
+
+  <facility>
+    <name>LEU</name>
+    <config>
+      <Sink>
+        <in_commods>
+	  <val>leu</val>
+	</in_commods>
+	<recipe_name>leu_recipe</recipe_name>
+	<social_behav>None</social_behav>
+	<user_pref>6</user_pref>
+	<avg_qty>33</avg_qty>
+	<sigma>0.5</sigma>
+	<time_seed>1</time_seed>
+      </Sink>
+    </config>
+  </facility>
+
+  <facility>
+    <name>delta_LEU</name>
+    <config>
+      <Sink>
+        <in_commods>
+	  <val>heu</val>
+	</in_commods>
+	<recipe_name>heu_recipe</recipe_name>
+	<avg_qty>1.0</avg_qty>
+	<sigma>0</sigma>
+	<social_behav>None</social_behav>
+	<user_pref>1</user_pref>
+      </Sink>
+    </config>
+  </facility>
+
+ <facility>
+    <name>covert_HEU</name>
+    <config>
+      <Sink>
+        <in_commods>
+	  <val>heu</val>
+	</in_commods>
+	<recipe_name>heu_recipe</recipe_name>
+	<avg_qty>0.03</avg_qty>
+	<sigma>0</sigma>
+	<social_behav>Random</social_behav>
+	<behav_interval>5</behav_interval>
+	<user_pref>8</user_pref>
+	<t_trade>20</t_trade>
+	<time_seed>1</time_seed>
+      </Sink>
+    </config>
+  </facility>
+
+  <facility>
+    <name>EnrichmentFacility</name>
+    <config>
+      <EnrichmentFacility>
+        <in_commod>nat_uranium</in_commod>
+	<in_recipe>nat_u_recipe</in_recipe>
+	<tails_assay>0.003</tails_assay>
+	<social_behav>0</social_behav>
+	<out_commods>
+          <val>leu</val>
+          <val>heu</val>
+	</out_commods>
+	<swu_capacity>180.0</swu_capacity>
+       </EnrichmentFacility>
+    </config>
+  </facility>
+
+  <recipe>
+    <name>nat_u_recipe</name>
+    <basis>atom</basis>
+    <nuclide> <id>922350000</id> <comp>0.0071</comp> </nuclide>
+    <nuclide> <id>922380000</id> <comp>0.993</comp> </nuclide>
+  </recipe>
+ 
+ <recipe>
+    <name>leu_recipe</name>
+    <basis>atom</basis>
+    <nuclide> <id>922350000</id> <comp>0.04</comp> </nuclide>
+    <nuclide> <id>922380000</id> <comp>0.96</comp> </nuclide>
+  </recipe>
+ <recipe>
+    <name>heu_recipe</name>
+    <basis>atom</basis>
+    <nuclide> <id>922350000</id> <comp>0.90</comp> </nuclide>
+    <nuclide> <id>922380000</id> <comp>0.10</comp> </nuclide>
+  </recipe>
+
+
+  <region>
+   <name>SingleRegion</name>
+   <config><NullRegion/></config>
+   <institution>
+     <name>SingleInstitution</name>
+     <initialfacilitylist>
+       <entry>
+	 <prototype>Source</prototype>
+	 <number>1</number>
+       </entry>
+       <entry>
+	 <prototype>EnrichmentFacility</prototype>
+	 <number>1</number>
+       </entry>
+       <entry>
+ 	 <prototype>LEU</prototype>
+	 <number>1</number>
+       </entry>
+       <entry>
+ 	 <prototype>delta_LEU</prototype>
+	 <number>1</number>
+       </entry>
+       <entry>
+ 	 <prototype>covert_HEU</prototype>
+	 <number>1</number>
+       </entry>
+     </initialfacilitylist>
+     <config><NullInst/></config>
+   </institution>
+ </region>
+
+ 
+</simulation>
+DEBUG3(memory):              Agent ID=5, ptr=0x7f8d79e572a8 created.
+DEBUG3(memory):              Agent ID=6, ptr=0x7f8d79dcd8f8 created.
+DEBUG3(memory):              Agent ID=7, ptr=0x7f8d79dcefb8 created.
+DEBUG3(memory):              Agent ID=8, ptr=0x7f8d79dd06d8 created.
+DEBUG3(memory):              Agent ID=9, ptr=0x7f8d79dcdf08 created.
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.00709929 with u238 atom fraction: 0.992901
+DEBUG3(memory):              Agent ID=10, ptr=0x7f8d79dccad0 created.
+DEBUG3(memory):              Agent ID=11, ptr=0x7f8d79dcf430 created.
+DEBUG3(memory):              Agent ID=12, ptr=0x7f8d79dcfe10 created.
+DEBUG1(core  ):          Agent 'SingleRegion' is entering the simulation.
+DEBUG3(core  ):              It has:
+DEBUG3(core  ):               * Spec: :agents:NullRegion
+DEBUG3(core  ):               * ID: 12
+DEBUG3(memory):              Agent ID=13, ptr=0x7f8d79dce2a0 created.
+DEBUG1(core  ):          Agent 'SingleInstitution' is entering the simulation.
+DEBUG3(core  ):              It has:
+DEBUG3(core  ):               * Spec: :agents:NullInst
+DEBUG3(core  ):               * ID: 13
+DEBUG3(memory):              Agent ID=14, ptr=0x7f8d79dce3e8 created.
+DEBUG1(core  ):          Agent 'Source' is entering the simulation.
+DEBUG3(core  ):              It has:
+DEBUG3(core  ):               * Spec: :cycamore:Source
+DEBUG3(core  ):               * ID: 14
+DEBUG3(memory):              Agent ID=15, ptr=0x7f8d79dd0fe8 created.
+DEBUG1(core  ):          Agent 'EnrichmentFacility' is entering the simulation.
+DEBUG3(core  ):              It has:
+DEBUG3(core  ):               * Spec: :cycamore:EnrichmentFacility
+DEBUG3(core  ):               * ID: 15
+DEBUG2(EnrFac):            EnrichmentFacility  entering the simuluation: 
+DEBUG2(EnrFac):            Facility_EnrichmentFacility ( ID=15, implementation=:cycamore:EnrichmentFacility,  name=EnrichmentFacility,  parentID=13 )  with:  lifetime: -1 build date: 0 with enrichment facility parameters: * SWU capacity: 180 * Tails assay: 0.003 * Feed assay: 0.00709929 * Input cyclus::Commodity: nat_uranium * Output cyclus::Commodities: {leu, heu
+DEBUG3(memory):              Agent ID=16, ptr=0x7f8d79dd2ca8 created.
+DEBUG1(core  ):          Agent 'LEU' is entering the simulation.
+DEBUG3(core  ):              It has:
+DEBUG3(core  ):               * Spec: :cycamore:Sink
+DEBUG3(core  ):               * ID: 16
+DEBUG3(memory):              Agent ID=17, ptr=0x7f8d79dd1408 created.
+DEBUG1(core  ):          Agent 'delta_LEU' is entering the simulation.
+DEBUG3(core  ):              It has:
+DEBUG3(core  ):               * Spec: :cycamore:Sink
+DEBUG3(core  ):               * ID: 17
+DEBUG3(memory):              Agent ID=18, ptr=0x7f8d79dd16a8 created.
+DEBUG1(core  ):          Agent 'covert_HEU' is entering the simulation.
+DEBUG3(core  ):              It has:
+DEBUG3(core  ):               * Spec: :cycamore:Sink
+DEBUG3(core  ):               * ID: 18
+DEBUG3(memory):              Deleting agent 'SingleInstitution' ID=10
+DEBUG3(memory):              Deleting agent 'LEU' ID=6
+DEBUG3(memory):              Deleting agent 'EnrichmentFacility' ID=9
+DEBUG3(memory):              Deleting agent 'delta_LEU' ID=7
+DEBUG3(memory):              Deleting agent 'SingleRegion' ID=11
+DEBUG3(memory):              Deleting agent 'SingleRegion' ID=12
+DEBUG3(memory):              Deleting agent 'covert_HEU' ID=8
+DEBUG3(memory):              Deleting agent 'Source' ID=5
+DEBUG3(memory):              Agent ID=19, ptr=0x7f8d7bc46cb8 created.
+DEBUG3(memory):              Agent ID=20, ptr=0x7f8d7bc46df8 created.
+DEBUG3(memory):              Agent ID=21, ptr=0x7f8d7bad15b8 created.
+DEBUG3(memory):              Agent ID=22, ptr=0x7f8d7bad1b58 created.
+DEBUG3(memory):              Agent ID=23, ptr=0x7f8d7bad20f8 created.
+DEBUG3(memory):              Agent ID=24, ptr=0x7f8d7c01d6b0 created.
+DEBUG3(memory):              Agent ID=25, ptr=0x7f8d7bfed160 created.
+DEBUG3(memory):              Agent ID=26, ptr=0x7f8d7bfee2c0 created.
+DEBUG3(memory):              Agent ID=27, ptr=0x7f8d7bfee3c0 created.
+DEBUG3(memory):              Agent ID=28, ptr=0x7f8d7bfed418 created.
+DEBUG3(memory):              Agent ID=29, ptr=0x7f8d7bfed848 created.
+DEBUG3(memory):              Agent ID=30, ptr=0x7f8d7bfedf88 created.
+DEBUG3(memory):              Agent ID=31, ptr=0x7f8d7bfeda08 created.
+DEBUG3(memory):              Agent ID=32, ptr=0x7f8d7bfedbd8 created.
+ INFO1(core  ):Simulation set to run from start=0 to end=5
+ INFO1(core  ):Beginning simulation
+ INFO1(core  ):Current time: 0
+ INFO2(core  ):  Beginning Tick for time: 0
+ INFO3(SrcFac):    Source is ticking {
+ INFO4(SrcFac):      will offer 1000 kg of nat_uranium.
+ INFO3(SrcFac):    Stats: Facility_Source ( ID=14, implementation=:cycamore:Source,  name=Source,  parentID=13 )  with:  lifetime: -1 build date: 0 supplies commodity 'nat_uranium' with recipe 'nat_u_recipe' at a capacity of 1000 kg per time step  commod producer members:  produces nat_uranium?: yes capacity: 1000 cost: 1000
+ INFO3(SrcFac):    }
+ INFO3(EnrFac):    EnrichmentFacility is ticking {
+ INFO3(EnrFac):    }
+ INFO3(SnkFac):    LEU is ticking {
+random number is 33.531
+ INFO4(SnkFac):       will request 33.531 kg of leu.
+ INFO3(SnkFac):    }
+ INFO3(SnkFac):    delta_LEU is ticking {
+ INFO4(SnkFac):       will request 1 kg of heu.
+ INFO3(SnkFac):    }
+ INFO3(SnkFac):    covert_HEU is ticking {
+ INFO3(SnkFac):    }
+ INFO2(core  ):  Beginning DRE for time: 0
+DEBUG1(core  ):          done with info gathering
+DEBUG1(core  ):          translating graph...
+DEBUG2(core  ):            Translating request portfolio of size 1e+299
+DEBUG4(core  ):                adding 1 request capacities
+DEBUG2(core  ):            Translating request portfolio of size 1
+DEBUG4(core  ):                adding 1 request capacities
+DEBUG2(core  ):            Translating request portfolio of size 33.531
+DEBUG4(core  ):                adding 1 request capacities
+DEBUG4(core  ):                adding 1 bid capacities
+DEBUG1(core  ):          Additing unit capacity: 1
+DEBUG1(core  ):          Additing unit capacity: 1
+DEBUG5(core  ):                  Updating preference for one of EnrichmentFacility's trade nodes:
+DEBUG5(core  ):                     preference: 0
+DEBUG1(core  ):          graph translated!
+DEBUG1(core  ):          solving graph...
+DEBUG5(core  ):                  Determining node weight: 
+DEBUG5(core  ):                         commodity weight: 1
+DEBUG5(core  ):                                 avg pref: 0
+DEBUG5(core  ):                              node weight: 1
+DEBUG1(core  ):          Group weight value during graph preconditioning is 1.
+DEBUG5(core  ):                  Determining node weight: 
+DEBUG5(core  ):                         commodity weight: 1
+DEBUG5(core  ):                                 avg pref: 0
+DEBUG5(core  ):                              node weight: 1
+DEBUG1(core  ):          Group weight value during graph preconditioning is 1.
+DEBUG5(core  ):                  Determining node weight: 
+DEBUG5(core  ):                         commodity weight: 1
+DEBUG5(core  ):                                 avg pref: 0
+DEBUG5(core  ):                              node weight: 1
+DEBUG1(core  ):          Group weight value during graph preconditioning is 1.
+DEBUG1(core  ):          Greedy Solving for 1e+299 amount of a resource.
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 1e+299
+DEBUG1(core  ):              unit capacity: 1
+DEBUG1(core  ):                   capacity: 1e+299
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 1000
+DEBUG1(core  ):              unit capacity: 1
+DEBUG1(core  ):                   capacity: 1000
+DEBUG1(core  ):          Capacity for unode of arc: 1e+299
+DEBUG1(core  ):          Capacity for vnode of arc: 1000
+DEBUG1(core  ):          Capacity for arc         : 1000
+DEBUG1(core  ):          Greedy Solver is matching 1000 amount of a resource.
+DEBUG1(core  ):          Updating capacity value from: 1e+299
+DEBUG1(core  ):                                    to: 1e+299
+DEBUG1(core  ):          Updating capacity value from: 1000
+DEBUG1(core  ):                                    to: 0
+DEBUG1(core  ):          Greedy Solving for 1 amount of a resource.
+DEBUG1(core  ):          Greedy Solving for 33.531 amount of a resource.
+DEBUG1(core  ):          graph solved!
+DEBUG1(core  ):          Back traslating 1 trade matches.
+DEBUG1(core  ):          trades translated!
+ INFO5(SrcFac):        Source just received an order for 1000 of nat_uranium
+ INFO5(EnrFac):        EnrichmentFacility is initially holding 0 total.
+ INFO5(EnrFac):        EnrichmentFacility added 1000 of nat_uranium to its inventory, which is holding 1000 total.
+DEBUG1(core  ):          done with info gathering
+DEBUG1(core  ):          translating graph...
+DEBUG1(core  ):          graph translated!
+DEBUG1(core  ):          solving graph...
+DEBUG1(core  ):          graph solved!
+DEBUG1(core  ):          Back traslating 0 trade matches.
+DEBUG1(core  ):          trades translated!
+ INFO2(core  ):  Beginning Tock for time: 0
+ INFO3(SrcFac):    Source is tocking {
+ INFO3(SrcFac):    }
+ INFO3(EnrFac):    EnrichmentFacility is tocking {
+ INFO3(EnrFac):    }
+ INFO3(SnkFac):    LEU is tocking {
+ INFO4(SnkFac):      Sink 16 is holding 0 units of material at the close of month 0.
+ INFO3(SnkFac):    }
+ INFO3(SnkFac):    delta_LEU is tocking {
+ INFO4(SnkFac):      Sink 17 is holding 0 units of material at the close of month 0.
+ INFO3(SnkFac):    }
+ INFO3(SnkFac):    covert_HEU is tocking {
+ INFO4(SnkFac):      Sink 18 is holding 0 units of material at the close of month 0.
+ INFO3(SnkFac):    }
+ INFO1(core  ):Current time: 1
+ INFO2(core  ):  Beginning Tick for time: 1
+ INFO3(SrcFac):    Source is ticking {
+ INFO4(SrcFac):      will offer 1000 kg of nat_uranium.
+ INFO3(SrcFac):    Stats: Facility_Source ( ID=14, implementation=:cycamore:Source,  name=Source,  parentID=13 )  with:  lifetime: -1 build date: 0 supplies commodity 'nat_uranium' with recipe 'nat_u_recipe' at a capacity of 1000 kg per time step  commod producer members:  produces nat_uranium?: yes capacity: 1000 cost: 1000
+ INFO3(SrcFac):    }
+ INFO3(EnrFac):    EnrichmentFacility is ticking {
+ INFO3(EnrFac):    }
+ INFO3(SnkFac):    LEU is ticking {
+random number is 32.7926
+ INFO4(SnkFac):       will request 32.7926 kg of leu.
+ INFO3(SnkFac):    }
+ INFO3(SnkFac):    delta_LEU is ticking {
+ INFO4(SnkFac):       will request 1 kg of heu.
+ INFO3(SnkFac):    }
+ INFO3(SnkFac):    covert_HEU is ticking {
+ INFO3(SnkFac):    }
+ INFO2(core  ):  Beginning DRE for time: 1
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+ INFO5(EnrFac):        EnrichmentFacility adding a swu constraint of 180
+ INFO5(EnrFac):        EnrichmentFacility adding a natu constraint of 1000
+DEBUG1(core  ):          done with info gathering
+DEBUG1(core  ):          translating graph...
+DEBUG2(core  ):            Translating request portfolio of size 1e+299
+DEBUG4(core  ):                adding 1 request capacities
+DEBUG2(core  ):            Translating request portfolio of size 1
+DEBUG4(core  ):                adding 1 request capacities
+DEBUG2(core  ):            Translating request portfolio of size 32.7926
+DEBUG4(core  ):                adding 1 request capacities
+DEBUG4(core  ):                adding 1 bid capacities
+DEBUG1(core  ):          Additing unit capacity: 1
+DEBUG1(core  ):          Additing unit capacity: 1
+DEBUG5(core  ):                  Updating preference for one of EnrichmentFacility's trade nodes:
+DEBUG5(core  ):                     preference: 0
+DEBUG4(core  ):                adding 2 bid capacities
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+DEBUG1(core  ):          Additing unit capacity: 218.818
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+DEBUG1(core  ):          Additing unit capacity: 193.102
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+DEBUG1(core  ):          Additing unit capacity: 1
+DEBUG5(core  ):                  Updating preference for one of delta_LEU's trade nodes:
+DEBUG5(core  ):                     preference: 1
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(core  ):          Additing unit capacity: 9.02595
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(core  ):          Additing unit capacity: 5.28323
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(core  ):          Additing unit capacity: 1
+DEBUG5(core  ):                  Updating preference for one of LEU's trade nodes:
+DEBUG5(core  ):                     preference: 6
+DEBUG1(core  ):          graph translated!
+DEBUG1(core  ):          solving graph...
+DEBUG5(core  ):                  Determining node weight: 
+DEBUG5(core  ):                         commodity weight: 1
+DEBUG5(core  ):                                 avg pref: 0
+DEBUG5(core  ):                              node weight: 1
+DEBUG1(core  ):          Group weight value during graph preconditioning is 1.
+DEBUG5(core  ):                  Determining node weight: 
+DEBUG5(core  ):                         commodity weight: 1
+DEBUG5(core  ):                                 avg pref: 1
+DEBUG5(core  ):                              node weight: 1.5
+DEBUG1(core  ):          Group weight value during graph preconditioning is 1.5.
+DEBUG5(core  ):                  Determining node weight: 
+DEBUG5(core  ):                         commodity weight: 1
+DEBUG5(core  ):                                 avg pref: 6
+DEBUG5(core  ):                              node weight: 1.85714
+DEBUG1(core  ):          Group weight value during graph preconditioning is 1.85714.
+DEBUG1(core  ):          Greedy Solving for 32.7926 amount of a resource.
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 32.7926
+DEBUG1(core  ):              unit capacity: 1
+DEBUG1(core  ):                   capacity: 32.7926
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 1000
+DEBUG1(core  ):              unit capacity: 9.02595
+DEBUG1(core  ):                   capacity: 110.792
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 180
+DEBUG1(core  ):              unit capacity: 5.28323
+DEBUG1(core  ):                   capacity: 34.0701
+DEBUG1(core  ):          Capacity for unode of arc: 32.7926
+DEBUG1(core  ):          Capacity for vnode of arc: 32.7926
+DEBUG1(core  ):          Capacity for arc         : 32.7926
+DEBUG1(core  ):          Greedy Solver is matching 32.7926 amount of a resource.
+DEBUG1(core  ):          Updating capacity value from: 32.7926
+DEBUG1(core  ):                                    to: 0
+DEBUG1(core  ):          Updating capacity value from: 1000
+DEBUG1(core  ):                                    to: 704.015
+DEBUG1(core  ):          Updating capacity value from: 180
+DEBUG1(core  ):                                    to: 6.74913
+DEBUG1(core  ):          Greedy Solving for 1 amount of a resource.
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 1
+DEBUG1(core  ):              unit capacity: 1
+DEBUG1(core  ):                   capacity: 1
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 704.015
+DEBUG1(core  ):              unit capacity: 218.818
+DEBUG1(core  ):                   capacity: 3.21735
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 6.74913
+DEBUG1(core  ):              unit capacity: 193.102
+DEBUG1(core  ):                   capacity: 0.0349512
+DEBUG1(core  ):          Capacity for unode of arc: 1
+DEBUG1(core  ):          Capacity for vnode of arc: 0.0349512
+DEBUG1(core  ):          Capacity for arc         : 0.0349512
+DEBUG1(core  ):          Greedy Solver is matching 0.0349512 amount of a resource.
+DEBUG1(core  ):          Updating capacity value from: 1
+DEBUG1(core  ):                                    to: 0.965049
+DEBUG1(core  ):          Updating capacity value from: 704.015
+DEBUG1(core  ):                                    to: 696.367
+DEBUG1(core  ):          Updating capacity value from: 6.74913
+DEBUG1(core  ):                                    to: 0
+DEBUG1(core  ):          Greedy Solving for 1e+299 amount of a resource.
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 1e+299
+DEBUG1(core  ):              unit capacity: 1
+DEBUG1(core  ):                   capacity: 1e+299
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 1000
+DEBUG1(core  ):              unit capacity: 1
+DEBUG1(core  ):                   capacity: 1000
+DEBUG1(core  ):          Capacity for unode of arc: 1e+299
+DEBUG1(core  ):          Capacity for vnode of arc: 1000
+DEBUG1(core  ):          Capacity for arc         : 1000
+DEBUG1(core  ):          Greedy Solver is matching 1000 amount of a resource.
+DEBUG1(core  ):          Updating capacity value from: 1e+299
+DEBUG1(core  ):                                    to: 1e+299
+DEBUG1(core  ):          Updating capacity value from: 1000
+DEBUG1(core  ):                                    to: 0
+DEBUG1(core  ):          graph solved!
+DEBUG1(core  ):          Back traslating 3 trade matches.
+DEBUG1(core  ):          trades translated!
+ INFO5(SrcFac):        Source just received an order for 1000 of nat_uranium
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(EnrFac):          EnrichmentFacility has enriched a material:
+DEBUG1(EnrFac):            * Amount: 295.985
+DEBUG1(EnrFac):            *    SWU: 173.251
+ INFO5(EnrFac):        EnrichmentFacility has performed an enrichment: 
+ INFO5(EnrFac):           * Feed Qty: 295.985
+ INFO5(EnrFac):           * Feed Assay: 0.709929
+ INFO5(EnrFac):           * Product Qty: 32.7926
+ INFO5(EnrFac):           * Product Assay: 4
+ INFO5(EnrFac):           * Tails Qty: 263.192
+ INFO5(EnrFac):           * Tails Assay: 0.3
+ INFO5(EnrFac):           * SWU: 173.251
+ INFO5(EnrFac):           * Current SWU capacity: 6.74913
+ INFO5(EnrFac):        EnrichmentFacility just received an order for 32.7926 of leu
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+DEBUG1(EnrFac):          EnrichmentFacility has enriched a material:
+DEBUG1(EnrFac):            * Amount: 7.64797
+DEBUG1(EnrFac):            *    SWU: 6.74913
+ INFO5(EnrFac):        EnrichmentFacility has performed an enrichment: 
+ INFO5(EnrFac):           * Feed Qty: 7.64797
+ INFO5(EnrFac):           * Feed Assay: 0.709929
+ INFO5(EnrFac):           * Product Qty: 0.0349512
+ INFO5(EnrFac):           * Product Assay: 90
+ INFO5(EnrFac):           * Tails Qty: 7.61302
+ INFO5(EnrFac):           * Tails Assay: 0.3
+ INFO5(EnrFac):           * SWU: 6.74913
+ INFO5(EnrFac):           * Current SWU capacity: 7.10543e-15
+ INFO5(EnrFac):        EnrichmentFacility just received an order for 0.0349512 of heu
+ INFO5(EnrFac):        EnrichmentFacility is initially holding 696.367 total.
+ INFO5(EnrFac):        EnrichmentFacility added 1000 of nat_uranium to its inventory, which is holding 1696.37 total.
+DEBUG1(core  ):          done with info gathering
+DEBUG1(core  ):          translating graph...
+DEBUG1(core  ):          graph translated!
+DEBUG1(core  ):          solving graph...
+DEBUG1(core  ):          graph solved!
+DEBUG1(core  ):          Back traslating 0 trade matches.
+DEBUG1(core  ):          trades translated!
+ INFO2(core  ):  Beginning Tock for time: 1
+ INFO3(SrcFac):    Source is tocking {
+ INFO3(SrcFac):    }
+ INFO3(EnrFac):    EnrichmentFacility is tocking {
+ INFO3(EnrFac):    }
+ INFO3(SnkFac):    LEU is tocking {
+ INFO4(SnkFac):      Sink 16 is holding 32.7926 units of material at the close of month 1.
+ INFO3(SnkFac):    }
+ INFO3(SnkFac):    delta_LEU is tocking {
+ INFO4(SnkFac):      Sink 17 is holding 0.0349512 units of material at the close of month 1.
+ INFO3(SnkFac):    }
+ INFO3(SnkFac):    covert_HEU is tocking {
+ INFO4(SnkFac):      Sink 18 is holding 0 units of material at the close of month 1.
+ INFO3(SnkFac):    }
+ INFO1(core  ):Current time: 2
+ INFO2(core  ):  Beginning Tick for time: 2
+ INFO3(SrcFac):    Source is ticking {
+ INFO4(SrcFac):      will offer 1000 kg of nat_uranium.
+ INFO3(SrcFac):    Stats: Facility_Source ( ID=14, implementation=:cycamore:Source,  name=Source,  parentID=13 )  with:  lifetime: -1 build date: 0 supplies commodity 'nat_uranium' with recipe 'nat_u_recipe' at a capacity of 1000 kg per time step  commod producer members:  produces nat_uranium?: yes capacity: 1000 cost: 1000
+ INFO3(SrcFac):    }
+ INFO3(EnrFac):    EnrichmentFacility is ticking {
+ INFO3(EnrFac):    }
+ INFO3(SnkFac):    LEU is ticking {
+random number is 32.2793
+ INFO4(SnkFac):       will request 32.2793 kg of leu.
+ INFO3(SnkFac):    }
+ INFO3(SnkFac):    delta_LEU is ticking {
+ INFO4(SnkFac):       will request 1 kg of heu.
+ INFO3(SnkFac):    }
+ INFO3(SnkFac):    covert_HEU is ticking {
+ INFO3(SnkFac):    }
+ INFO2(core  ):  Beginning DRE for time: 2
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+ INFO5(EnrFac):        EnrichmentFacility adding a swu constraint of 180
+ INFO5(EnrFac):        EnrichmentFacility adding a natu constraint of 1696.37
+DEBUG1(core  ):          done with info gathering
+DEBUG1(core  ):          translating graph...
+DEBUG2(core  ):            Translating request portfolio of size 1e+299
+DEBUG4(core  ):                adding 1 request capacities
+DEBUG2(core  ):            Translating request portfolio of size 1
+DEBUG4(core  ):                adding 1 request capacities
+DEBUG2(core  ):            Translating request portfolio of size 32.2793
+DEBUG4(core  ):                adding 1 request capacities
+DEBUG4(core  ):                adding 1 bid capacities
+DEBUG1(core  ):          Additing unit capacity: 1
+DEBUG1(core  ):          Additing unit capacity: 1
+DEBUG5(core  ):                  Updating preference for one of EnrichmentFacility's trade nodes:
+DEBUG5(core  ):                     preference: 0
+DEBUG4(core  ):                adding 2 bid capacities
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(core  ):          Additing unit capacity: 9.02595
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(core  ):          Additing unit capacity: 5.28323
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(core  ):          Additing unit capacity: 1
+DEBUG5(core  ):                  Updating preference for one of LEU's trade nodes:
+DEBUG5(core  ):                     preference: 6
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+DEBUG1(core  ):          Additing unit capacity: 218.818
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+DEBUG1(core  ):          Additing unit capacity: 193.102
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+DEBUG1(core  ):          Additing unit capacity: 1
+DEBUG5(core  ):                  Updating preference for one of delta_LEU's trade nodes:
+DEBUG5(core  ):                     preference: 1
+DEBUG1(core  ):          graph translated!
+DEBUG1(core  ):          solving graph...
+DEBUG5(core  ):                  Determining node weight: 
+DEBUG5(core  ):                         commodity weight: 1
+DEBUG5(core  ):                                 avg pref: 0
+DEBUG5(core  ):                              node weight: 1
+DEBUG1(core  ):          Group weight value during graph preconditioning is 1.
+DEBUG5(core  ):                  Determining node weight: 
+DEBUG5(core  ):                         commodity weight: 1
+DEBUG5(core  ):                                 avg pref: 1
+DEBUG5(core  ):                              node weight: 1.5
+DEBUG1(core  ):          Group weight value during graph preconditioning is 1.5.
+DEBUG5(core  ):                  Determining node weight: 
+DEBUG5(core  ):                         commodity weight: 1
+DEBUG5(core  ):                                 avg pref: 6
+DEBUG5(core  ):                              node weight: 1.85714
+DEBUG1(core  ):          Group weight value during graph preconditioning is 1.85714.
+DEBUG1(core  ):          Greedy Solving for 32.2793 amount of a resource.
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 32.2793
+DEBUG1(core  ):              unit capacity: 1
+DEBUG1(core  ):                   capacity: 32.2793
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 1696.37
+DEBUG1(core  ):              unit capacity: 9.02595
+DEBUG1(core  ):                   capacity: 187.943
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 180
+DEBUG1(core  ):              unit capacity: 5.28323
+DEBUG1(core  ):                   capacity: 34.0701
+DEBUG1(core  ):          Capacity for unode of arc: 32.2793
+DEBUG1(core  ):          Capacity for vnode of arc: 32.2793
+DEBUG1(core  ):          Capacity for arc         : 32.2793
+DEBUG1(core  ):          Greedy Solver is matching 32.2793 amount of a resource.
+DEBUG1(core  ):          Updating capacity value from: 32.2793
+DEBUG1(core  ):                                    to: 0
+DEBUG1(core  ):          Updating capacity value from: 1696.37
+DEBUG1(core  ):                                    to: 1405.02
+DEBUG1(core  ):          Updating capacity value from: 180
+DEBUG1(core  ):                                    to: 9.46083
+DEBUG1(core  ):          Greedy Solving for 1 amount of a resource.
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 1
+DEBUG1(core  ):              unit capacity: 1
+DEBUG1(core  ):                   capacity: 1
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 1405.02
+DEBUG1(core  ):              unit capacity: 218.818
+DEBUG1(core  ):                   capacity: 6.42092
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 9.46083
+DEBUG1(core  ):              unit capacity: 193.102
+DEBUG1(core  ):                   capacity: 0.0489941
+DEBUG1(core  ):          Capacity for unode of arc: 1
+DEBUG1(core  ):          Capacity for vnode of arc: 0.0489941
+DEBUG1(core  ):          Capacity for arc         : 0.0489941
+DEBUG1(core  ):          Greedy Solver is matching 0.0489941 amount of a resource.
+DEBUG1(core  ):          Updating capacity value from: 1
+DEBUG1(core  ):                                    to: 0.951006
+DEBUG1(core  ):          Updating capacity value from: 1405.02
+DEBUG1(core  ):                                    to: 1394.29
+DEBUG1(core  ):          Updating capacity value from: 9.46083
+DEBUG1(core  ):                                    to: 0
+DEBUG1(core  ):          Greedy Solving for 1e+299 amount of a resource.
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 1e+299
+DEBUG1(core  ):              unit capacity: 1
+DEBUG1(core  ):                   capacity: 1e+299
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 1000
+DEBUG1(core  ):              unit capacity: 1
+DEBUG1(core  ):                   capacity: 1000
+DEBUG1(core  ):          Capacity for unode of arc: 1e+299
+DEBUG1(core  ):          Capacity for vnode of arc: 1000
+DEBUG1(core  ):          Capacity for arc         : 1000
+DEBUG1(core  ):          Greedy Solver is matching 1000 amount of a resource.
+DEBUG1(core  ):          Updating capacity value from: 1e+299
+DEBUG1(core  ):                                    to: 1e+299
+DEBUG1(core  ):          Updating capacity value from: 1000
+DEBUG1(core  ):                                    to: 0
+DEBUG1(core  ):          graph solved!
+DEBUG1(core  ):          Back traslating 3 trade matches.
+DEBUG1(core  ):          trades translated!
+ INFO5(SrcFac):        Source just received an order for 1000 of nat_uranium
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(EnrFac):          EnrichmentFacility has enriched a material:
+DEBUG1(EnrFac):            * Amount: 291.352
+DEBUG1(EnrFac):            *    SWU: 170.539
+ INFO5(EnrFac):        EnrichmentFacility has performed an enrichment: 
+ INFO5(EnrFac):           * Feed Qty: 291.352
+ INFO5(EnrFac):           * Feed Assay: 0.709929
+ INFO5(EnrFac):           * Product Qty: 32.2793
+ INFO5(EnrFac):           * Product Assay: 4
+ INFO5(EnrFac):           * Tails Qty: 259.073
+ INFO5(EnrFac):           * Tails Assay: 0.3
+ INFO5(EnrFac):           * SWU: 170.539
+ INFO5(EnrFac):           * Current SWU capacity: 9.46083
+ INFO5(EnrFac):        EnrichmentFacility just received an order for 32.2793 of leu
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+DEBUG1(EnrFac):          EnrichmentFacility has enriched a material:
+DEBUG1(EnrFac):            * Amount: 10.7208
+DEBUG1(EnrFac):            *    SWU: 9.46083
+ INFO5(EnrFac):        EnrichmentFacility has performed an enrichment: 
+ INFO5(EnrFac):           * Feed Qty: 10.7208
+ INFO5(EnrFac):           * Feed Assay: 0.709929
+ INFO5(EnrFac):           * Product Qty: 0.0489941
+ INFO5(EnrFac):           * Product Assay: 90
+ INFO5(EnrFac):           * Tails Qty: 10.6718
+ INFO5(EnrFac):           * Tails Assay: 0.3
+ INFO5(EnrFac):           * SWU: 9.46083
+ INFO5(EnrFac):           * Current SWU capacity: 0
+ INFO5(EnrFac):        EnrichmentFacility just received an order for 0.0489941 of heu
+ INFO5(EnrFac):        EnrichmentFacility is initially holding 1394.29 total.
+ INFO5(EnrFac):        EnrichmentFacility added 1000 of nat_uranium to its inventory, which is holding 2394.29 total.
+DEBUG1(core  ):          done with info gathering
+DEBUG1(core  ):          translating graph...
+DEBUG1(core  ):          graph translated!
+DEBUG1(core  ):          solving graph...
+DEBUG1(core  ):          graph solved!
+DEBUG1(core  ):          Back traslating 0 trade matches.
+DEBUG1(core  ):          trades translated!
+ INFO2(core  ):  Beginning Tock for time: 2
+ INFO3(SrcFac):    Source is tocking {
+ INFO3(SrcFac):    }
+ INFO3(EnrFac):    EnrichmentFacility is tocking {
+ INFO3(EnrFac):    }
+ INFO3(SnkFac):    LEU is tocking {
+ INFO4(SnkFac):      Sink 16 is holding 65.072 units of material at the close of month 2.
+ INFO3(SnkFac):    }
+ INFO3(SnkFac):    delta_LEU is tocking {
+ INFO4(SnkFac):      Sink 17 is holding 0.0839453 units of material at the close of month 2.
+ INFO3(SnkFac):    }
+ INFO3(SnkFac):    covert_HEU is tocking {
+ INFO4(SnkFac):      Sink 18 is holding 0 units of material at the close of month 2.
+ INFO3(SnkFac):    }
+ INFO1(core  ):Current time: 3
+ INFO2(core  ):  Beginning Tick for time: 3
+ INFO3(SrcFac):    Source is ticking {
+ INFO4(SrcFac):      will offer 1000 kg of nat_uranium.
+ INFO3(SrcFac):    Stats: Facility_Source ( ID=14, implementation=:cycamore:Source,  name=Source,  parentID=13 )  with:  lifetime: -1 build date: 0 supplies commodity 'nat_uranium' with recipe 'nat_u_recipe' at a capacity of 1000 kg per time step  commod producer members:  produces nat_uranium?: yes capacity: 1000 cost: 1000
+ INFO3(SrcFac):    }
+ INFO3(EnrFac):    EnrichmentFacility is ticking {
+ INFO3(EnrFac):    }
+ INFO3(SnkFac):    LEU is ticking {
+random number is 31.536
+ INFO4(SnkFac):       will request 31.536 kg of leu.
+ INFO3(SnkFac):    }
+ INFO3(SnkFac):    delta_LEU is ticking {
+ INFO4(SnkFac):       will request 1 kg of heu.
+ INFO3(SnkFac):    }
+ INFO3(SnkFac):    covert_HEU is ticking {
+ INFO3(SnkFac):    }
+ INFO2(core  ):  Beginning DRE for time: 3
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+ INFO5(EnrFac):        EnrichmentFacility adding a swu constraint of 180
+ INFO5(EnrFac):        EnrichmentFacility adding a natu constraint of 2394.29
+DEBUG1(core  ):          done with info gathering
+DEBUG1(core  ):          translating graph...
+DEBUG2(core  ):            Translating request portfolio of size 1e+299
+DEBUG4(core  ):                adding 1 request capacities
+DEBUG2(core  ):            Translating request portfolio of size 1
+DEBUG4(core  ):                adding 1 request capacities
+DEBUG2(core  ):            Translating request portfolio of size 31.536
+DEBUG4(core  ):                adding 1 request capacities
+DEBUG4(core  ):                adding 1 bid capacities
+DEBUG1(core  ):          Additing unit capacity: 1
+DEBUG1(core  ):          Additing unit capacity: 1
+DEBUG5(core  ):                  Updating preference for one of EnrichmentFacility's trade nodes:
+DEBUG5(core  ):                     preference: 0
+DEBUG4(core  ):                adding 2 bid capacities
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(core  ):          Additing unit capacity: 9.02595
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(core  ):          Additing unit capacity: 5.28323
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(core  ):          Additing unit capacity: 1
+DEBUG5(core  ):                  Updating preference for one of LEU's trade nodes:
+DEBUG5(core  ):                     preference: 6
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+DEBUG1(core  ):          Additing unit capacity: 218.818
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+DEBUG1(core  ):          Additing unit capacity: 193.102
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+DEBUG1(core  ):          Additing unit capacity: 1
+DEBUG5(core  ):                  Updating preference for one of delta_LEU's trade nodes:
+DEBUG5(core  ):                     preference: 1
+DEBUG1(core  ):          graph translated!
+DEBUG1(core  ):          solving graph...
+DEBUG5(core  ):                  Determining node weight: 
+DEBUG5(core  ):                         commodity weight: 1
+DEBUG5(core  ):                                 avg pref: 0
+DEBUG5(core  ):                              node weight: 1
+DEBUG1(core  ):          Group weight value during graph preconditioning is 1.
+DEBUG5(core  ):                  Determining node weight: 
+DEBUG5(core  ):                         commodity weight: 1
+DEBUG5(core  ):                                 avg pref: 1
+DEBUG5(core  ):                              node weight: 1.5
+DEBUG1(core  ):          Group weight value during graph preconditioning is 1.5.
+DEBUG5(core  ):                  Determining node weight: 
+DEBUG5(core  ):                         commodity weight: 1
+DEBUG5(core  ):                                 avg pref: 6
+DEBUG5(core  ):                              node weight: 1.85714
+DEBUG1(core  ):          Group weight value during graph preconditioning is 1.85714.
+DEBUG1(core  ):          Greedy Solving for 31.536 amount of a resource.
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 31.536
+DEBUG1(core  ):              unit capacity: 1
+DEBUG1(core  ):                   capacity: 31.536
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 2394.29
+DEBUG1(core  ):              unit capacity: 9.02595
+DEBUG1(core  ):                   capacity: 265.268
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 180
+DEBUG1(core  ):              unit capacity: 5.28323
+DEBUG1(core  ):                   capacity: 34.0701
+DEBUG1(core  ):          Capacity for unode of arc: 31.536
+DEBUG1(core  ):          Capacity for vnode of arc: 31.536
+DEBUG1(core  ):          Capacity for arc         : 31.536
+DEBUG1(core  ):          Greedy Solver is matching 31.536 amount of a resource.
+DEBUG1(core  ):          Updating capacity value from: 31.536
+DEBUG1(core  ):                                    to: 0
+DEBUG1(core  ):          Updating capacity value from: 2394.29
+DEBUG1(core  ):                                    to: 2109.65
+DEBUG1(core  ):          Updating capacity value from: 180
+DEBUG1(core  ):                                    to: 13.3881
+DEBUG1(core  ):          Greedy Solving for 1 amount of a resource.
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 1
+DEBUG1(core  ):              unit capacity: 1
+DEBUG1(core  ):                   capacity: 1
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 2109.65
+DEBUG1(core  ):              unit capacity: 218.818
+DEBUG1(core  ):                   capacity: 9.64111
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 13.3881
+DEBUG1(core  ):              unit capacity: 193.102
+DEBUG1(core  ):                   capacity: 0.0693321
+DEBUG1(core  ):          Capacity for unode of arc: 1
+DEBUG1(core  ):          Capacity for vnode of arc: 0.0693321
+DEBUG1(core  ):          Capacity for arc         : 0.0693321
+DEBUG1(core  ):          Greedy Solver is matching 0.0693321 amount of a resource.
+DEBUG1(core  ):          Updating capacity value from: 1
+DEBUG1(core  ):                                    to: 0.930668
+DEBUG1(core  ):          Updating capacity value from: 2109.65
+DEBUG1(core  ):                                    to: 2094.48
+DEBUG1(core  ):          Updating capacity value from: 13.3881
+DEBUG1(core  ):                                    to: 0
+DEBUG1(core  ):          Greedy Solving for 1e+299 amount of a resource.
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 1e+299
+DEBUG1(core  ):              unit capacity: 1
+DEBUG1(core  ):                   capacity: 1e+299
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 1000
+DEBUG1(core  ):              unit capacity: 1
+DEBUG1(core  ):                   capacity: 1000
+DEBUG1(core  ):          Capacity for unode of arc: 1e+299
+DEBUG1(core  ):          Capacity for vnode of arc: 1000
+DEBUG1(core  ):          Capacity for arc         : 1000
+DEBUG1(core  ):          Greedy Solver is matching 1000 amount of a resource.
+DEBUG1(core  ):          Updating capacity value from: 1e+299
+DEBUG1(core  ):                                    to: 1e+299
+DEBUG1(core  ):          Updating capacity value from: 1000
+DEBUG1(core  ):                                    to: 0
+DEBUG1(core  ):          graph solved!
+DEBUG1(core  ):          Back traslating 3 trade matches.
+DEBUG1(core  ):          trades translated!
+ INFO5(SrcFac):        Source just received an order for 1000 of nat_uranium
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(EnrFac):          EnrichmentFacility has enriched a material:
+DEBUG1(EnrFac):            * Amount: 284.642
+DEBUG1(EnrFac):            *    SWU: 166.612
+ INFO5(EnrFac):        EnrichmentFacility has performed an enrichment: 
+ INFO5(EnrFac):           * Feed Qty: 284.642
+ INFO5(EnrFac):           * Feed Assay: 0.709929
+ INFO5(EnrFac):           * Product Qty: 31.536
+ INFO5(EnrFac):           * Product Assay: 4
+ INFO5(EnrFac):           * Tails Qty: 253.106
+ INFO5(EnrFac):           * Tails Assay: 0.3
+ INFO5(EnrFac):           * SWU: 166.612
+ INFO5(EnrFac):           * Current SWU capacity: 13.3881
+ INFO5(EnrFac):        EnrichmentFacility just received an order for 31.536 of leu
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+DEBUG1(EnrFac):          EnrichmentFacility has enriched a material:
+DEBUG1(EnrFac):            * Amount: 15.1711
+DEBUG1(EnrFac):            *    SWU: 13.3881
+ INFO5(EnrFac):        EnrichmentFacility has performed an enrichment: 
+ INFO5(EnrFac):           * Feed Qty: 15.1711
+ INFO5(EnrFac):           * Feed Assay: 0.709929
+ INFO5(EnrFac):           * Product Qty: 0.0693321
+ INFO5(EnrFac):           * Product Assay: 90
+ INFO5(EnrFac):           * Tails Qty: 15.1018
+ INFO5(EnrFac):           * Tails Assay: 0.3
+ INFO5(EnrFac):           * SWU: 13.3881
+ INFO5(EnrFac):           * Current SWU capacity: 1.42109e-14
+ INFO5(EnrFac):        EnrichmentFacility just received an order for 0.0693321 of heu
+ INFO5(EnrFac):        EnrichmentFacility is initially holding 2094.48 total.
+ INFO5(EnrFac):        EnrichmentFacility added 1000 of nat_uranium to its inventory, which is holding 3094.48 total.
+DEBUG1(core  ):          done with info gathering
+DEBUG1(core  ):          translating graph...
+DEBUG1(core  ):          graph translated!
+DEBUG1(core  ):          solving graph...
+DEBUG1(core  ):          graph solved!
+DEBUG1(core  ):          Back traslating 0 trade matches.
+DEBUG1(core  ):          trades translated!
+ INFO2(core  ):  Beginning Tock for time: 3
+ INFO3(SrcFac):    Source is tocking {
+ INFO3(SrcFac):    }
+ INFO3(EnrFac):    EnrichmentFacility is tocking {
+ INFO3(EnrFac):    }
+ INFO3(SnkFac):    LEU is tocking {
+ INFO4(SnkFac):      Sink 16 is holding 96.6079 units of material at the close of month 3.
+ INFO3(SnkFac):    }
+ INFO3(SnkFac):    delta_LEU is tocking {
+ INFO4(SnkFac):      Sink 17 is holding 0.153277 units of material at the close of month 3.
+ INFO3(SnkFac):    }
+ INFO3(SnkFac):    covert_HEU is tocking {
+ INFO4(SnkFac):      Sink 18 is holding 0 units of material at the close of month 3.
+ INFO3(SnkFac):    }
+ INFO1(core  ):Current time: 4
+ INFO2(core  ):  Beginning Tick for time: 4
+ INFO3(SrcFac):    Source is ticking {
+ INFO4(SrcFac):      will offer 1000 kg of nat_uranium.
+ INFO3(SrcFac):    Stats: Facility_Source ( ID=14, implementation=:cycamore:Source,  name=Source,  parentID=13 )  with:  lifetime: -1 build date: 0 supplies commodity 'nat_uranium' with recipe 'nat_u_recipe' at a capacity of 1000 kg per time step  commod producer members:  produces nat_uranium?: yes capacity: 1000 cost: 1000
+ INFO3(SrcFac):    }
+ INFO3(EnrFac):    EnrichmentFacility is ticking {
+ INFO3(EnrFac):    }
+ INFO3(SnkFac):    LEU is ticking {
+random number is 32.9048
+ INFO4(SnkFac):       will request 32.9048 kg of leu.
+ INFO3(SnkFac):    }
+ INFO3(SnkFac):    delta_LEU is ticking {
+ INFO4(SnkFac):       will request 1 kg of heu.
+ INFO3(SnkFac):    }
+ INFO3(SnkFac):    covert_HEU is ticking {
+ INFO3(SnkFac):    }
+ INFO2(core  ):  Beginning DRE for time: 4
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+ INFO5(EnrFac):        EnrichmentFacility adding a swu constraint of 180
+ INFO5(EnrFac):        EnrichmentFacility adding a natu constraint of 3094.48
+DEBUG1(core  ):          done with info gathering
+DEBUG1(core  ):          translating graph...
+DEBUG2(core  ):            Translating request portfolio of size 1e+299
+DEBUG4(core  ):                adding 1 request capacities
+DEBUG2(core  ):            Translating request portfolio of size 1
+DEBUG4(core  ):                adding 1 request capacities
+DEBUG2(core  ):            Translating request portfolio of size 32.9048
+DEBUG4(core  ):                adding 1 request capacities
+DEBUG4(core  ):                adding 1 bid capacities
+DEBUG1(core  ):          Additing unit capacity: 1
+DEBUG1(core  ):          Additing unit capacity: 1
+DEBUG5(core  ):                  Updating preference for one of EnrichmentFacility's trade nodes:
+DEBUG5(core  ):                     preference: 0
+DEBUG4(core  ):                adding 2 bid capacities
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(core  ):          Additing unit capacity: 9.02595
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(core  ):          Additing unit capacity: 5.28323
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(core  ):          Additing unit capacity: 1
+DEBUG5(core  ):                  Updating preference for one of LEU's trade nodes:
+DEBUG5(core  ):                     preference: 6
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+DEBUG1(core  ):          Additing unit capacity: 218.818
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+DEBUG1(core  ):          Additing unit capacity: 193.102
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+DEBUG1(core  ):          Additing unit capacity: 1
+DEBUG5(core  ):                  Updating preference for one of delta_LEU's trade nodes:
+DEBUG5(core  ):                     preference: 1
+DEBUG1(core  ):          graph translated!
+DEBUG1(core  ):          solving graph...
+DEBUG5(core  ):                  Determining node weight: 
+DEBUG5(core  ):                         commodity weight: 1
+DEBUG5(core  ):                                 avg pref: 0
+DEBUG5(core  ):                              node weight: 1
+DEBUG1(core  ):          Group weight value during graph preconditioning is 1.
+DEBUG5(core  ):                  Determining node weight: 
+DEBUG5(core  ):                         commodity weight: 1
+DEBUG5(core  ):                                 avg pref: 1
+DEBUG5(core  ):                              node weight: 1.5
+DEBUG1(core  ):          Group weight value during graph preconditioning is 1.5.
+DEBUG5(core  ):                  Determining node weight: 
+DEBUG5(core  ):                         commodity weight: 1
+DEBUG5(core  ):                                 avg pref: 6
+DEBUG5(core  ):                              node weight: 1.85714
+DEBUG1(core  ):          Group weight value during graph preconditioning is 1.85714.
+DEBUG1(core  ):          Greedy Solving for 32.9048 amount of a resource.
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 32.9048
+DEBUG1(core  ):              unit capacity: 1
+DEBUG1(core  ):                   capacity: 32.9048
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 3094.48
+DEBUG1(core  ):              unit capacity: 9.02595
+DEBUG1(core  ):                   capacity: 342.843
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 180
+DEBUG1(core  ):              unit capacity: 5.28323
+DEBUG1(core  ):                   capacity: 34.0701
+DEBUG1(core  ):          Capacity for unode of arc: 32.9048
+DEBUG1(core  ):          Capacity for vnode of arc: 32.9048
+DEBUG1(core  ):          Capacity for arc         : 32.9048
+DEBUG1(core  ):          Greedy Solver is matching 32.9048 amount of a resource.
+DEBUG1(core  ):          Updating capacity value from: 32.9048
+DEBUG1(core  ):                                    to: 0
+DEBUG1(core  ):          Updating capacity value from: 3094.48
+DEBUG1(core  ):                                    to: 2797.48
+DEBUG1(core  ):          Updating capacity value from: 180
+DEBUG1(core  ):                                    to: 6.15661
+DEBUG1(core  ):          Greedy Solving for 1 amount of a resource.
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 1
+DEBUG1(core  ):              unit capacity: 1
+DEBUG1(core  ):                   capacity: 1
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 2797.48
+DEBUG1(core  ):              unit capacity: 218.818
+DEBUG1(core  ):                   capacity: 12.7845
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 6.15661
+DEBUG1(core  ):              unit capacity: 193.102
+DEBUG1(core  ):                   capacity: 0.0318828
+DEBUG1(core  ):          Capacity for unode of arc: 1
+DEBUG1(core  ):          Capacity for vnode of arc: 0.0318828
+DEBUG1(core  ):          Capacity for arc         : 0.0318828
+DEBUG1(core  ):          Greedy Solver is matching 0.0318828 amount of a resource.
+DEBUG1(core  ):          Updating capacity value from: 1
+DEBUG1(core  ):                                    to: 0.968117
+DEBUG1(core  ):          Updating capacity value from: 2797.48
+DEBUG1(core  ):                                    to: 2790.51
+DEBUG1(core  ):          Updating capacity value from: 6.15661
+DEBUG1(core  ):                                    to: 0
+DEBUG1(core  ):          Greedy Solving for 1e+299 amount of a resource.
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 1e+299
+DEBUG1(core  ):              unit capacity: 1
+DEBUG1(core  ):                   capacity: 1e+299
+DEBUG1(core  ):          Capacity for node: 
+DEBUG1(core  ):             group capacity: 1000
+DEBUG1(core  ):              unit capacity: 1
+DEBUG1(core  ):                   capacity: 1000
+DEBUG1(core  ):          Capacity for unode of arc: 1e+299
+DEBUG1(core  ):          Capacity for vnode of arc: 1000
+DEBUG1(core  ):          Capacity for arc         : 1000
+DEBUG1(core  ):          Greedy Solver is matching 1000 amount of a resource.
+DEBUG1(core  ):          Updating capacity value from: 1e+299
+DEBUG1(core  ):                                    to: 1e+299
+DEBUG1(core  ):          Updating capacity value from: 1000
+DEBUG1(core  ):                                    to: 0
+DEBUG1(core  ):          graph solved!
+DEBUG1(core  ):          Back traslating 3 trade matches.
+DEBUG1(core  ):          trades translated!
+ INFO5(SrcFac):        Source just received an order for 1000 of nat_uranium
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.04 with u238 atom fraction: 0.96
+DEBUG1(EnrFac):          EnrichmentFacility has enriched a material:
+DEBUG1(EnrFac):            * Amount: 296.997
+DEBUG1(EnrFac):            *    SWU: 173.843
+ INFO5(EnrFac):        EnrichmentFacility has performed an enrichment: 
+ INFO5(EnrFac):           * Feed Qty: 296.997
+ INFO5(EnrFac):           * Feed Assay: 0.709929
+ INFO5(EnrFac):           * Product Qty: 32.9048
+ INFO5(EnrFac):           * Product Assay: 4
+ INFO5(EnrFac):           * Tails Qty: 264.092
+ INFO5(EnrFac):           * Tails Assay: 0.3
+ INFO5(EnrFac):           * SWU: 173.843
+ INFO5(EnrFac):           * Current SWU capacity: 6.15661
+ INFO5(EnrFac):        EnrichmentFacility just received an order for 32.9048 of leu
+DEBUG1(CEnr  ):          Comparing u235 atom fraction : 0.9 with u238 atom fraction: 0.1
+DEBUG1(EnrFac):          EnrichmentFacility has enriched a material:
+DEBUG1(EnrFac):            * Amount: 6.97654
+DEBUG1(EnrFac):            *    SWU: 6.15661
+ INFO5(EnrFac):        EnrichmentFacility has performed an enrichment: 
+ INFO5(EnrFac):           * Feed Qty: 6.97654
+ INFO5(EnrFac):           * Feed Assay: 0.709929
+ INFO5(EnrFac):           * Product Qty: 0.0318828
+ INFO5(EnrFac):           * Product Assay: 90
+ INFO5(EnrFac):           * Tails Qty: 6.94465
+ INFO5(EnrFac):           * Tails Assay: 0.3
+ INFO5(EnrFac):           * SWU: 6.15661
+ INFO5(EnrFac):           * Current SWU capacity: 0
+ INFO5(EnrFac):        EnrichmentFacility just received an order for 0.0318828 of heu
+ INFO5(EnrFac):        EnrichmentFacility is initially holding 2790.51 total.
+ INFO5(EnrFac):        EnrichmentFacility added 1000 of nat_uranium to its inventory, which is holding 3790.51 total.
+DEBUG1(core  ):          done with info gathering
+DEBUG1(core  ):          translating graph...
+DEBUG1(core  ):          graph translated!
+DEBUG1(core  ):          solving graph...
+DEBUG1(core  ):          graph solved!
+DEBUG1(core  ):          Back traslating 0 trade matches.
+DEBUG1(core  ):          trades translated!
+ INFO2(core  ):  Beginning Tock for time: 4
+ INFO3(SrcFac):    Source is tocking {
+ INFO3(SrcFac):    }
+ INFO3(EnrFac):    EnrichmentFacility is tocking {
+ INFO3(EnrFac):    }
+ INFO3(SnkFac):    LEU is tocking {
+ INFO4(SnkFac):      Sink 16 is holding 129.513 units of material at the close of month 4.
+ INFO3(SnkFac):    }
+ INFO3(SnkFac):    delta_LEU is tocking {
+ INFO4(SnkFac):      Sink 17 is holding 0.18516 units of material at the close of month 4.
+ INFO3(SnkFac):    }
+ INFO3(SnkFac):    covert_HEU is tocking {
+ INFO4(SnkFac):      Sink 18 is holding 0 units of material at the close of month 4.
+ INFO3(SnkFac):    }
+
+Status: Cyclus run successful!
+Output location: run-18.sqlite
+Simulation ID: 86f805ff-d023-4b79-a799-fef40f79dbb2
+DEBUG3(memory):              Deleting agent 'delta_LEU' ID=7
+DEBUG3(memory):              Deleting agent 'covert_HEU' ID=8
+DEBUG3(memory):              Deleting agent 'EnrichmentFacility' ID=9
+DEBUG3(memory):              Deleting agent 'Source' ID=5
+DEBUG3(memory):              Deleting agent 'LEU' ID=6
+DEBUG3(memory):              Deleting agent 'SingleRegion' ID=11
+DEBUG3(memory):              Deleting agent 'SingleRegion' ID=12
+DEBUG3(memory):              Deleting agent 'SingleInstitution' ID=10
