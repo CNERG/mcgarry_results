@@ -1,0 +1,107 @@
+<simulation>
+  <control>
+    <duration>100</duration>
+    <startmonth>1</startmonth>
+    <startyear>2000</startyear>
+  </control>
+
+  <archetypes>
+    <spec> <lib>cycamore</lib><name>Source</name> </spec>
+    <spec> <lib>cycamore</lib><name>Sink</name> </spec>
+    <spec><lib>agents</lib><name>NullRegion</name></spec>
+    <spec><lib>agents</lib><name>NullInst</name></spec>
+ </archetypes>
+ 
+ <facility>
+   <name>PuSource</name>
+   <config>
+     <Source>
+       <outcommod>kr85</outcommod>
+       <outrecipe>kr85_recipe</outrecipe>
+     </Source>
+   </config>
+ </facility>
+ 
+ <facility>
+   <name>RG_Sep1</name>
+   <config>
+     <Sink>
+       <in_commods>
+	 <val>kr85</val>
+       </in_commods>
+       <recipe_name>kr85_recipe</recipe_name>
+       <social_behav>None</social_behav>
+       <avg_qty>80000</avg_qty>
+       <sigma>20000</sigma>
+       <rng_seed>0</rng_seed>
+     </Sink>
+   </config>
+ </facility>
+ 
+ <facility>
+   <name>RG_Sep2</name>
+   <config>
+     <Sink>
+       <in_commods>
+	 <val>kr85</val>
+       </in_commods>
+       <recipe_name>kr85_recipe</recipe_name>
+       <avg_qty>80000</avg_qty>
+       <sigma>20000</sigma>
+       <social_behav>None</social_behav>
+     </Sink>
+   </config>
+ </facility>
+ 
+ <facility>
+   <name>WG_Sep</name>
+   <config>
+     <Sink>
+       <in_commods>
+	 <val>kr85</val>
+       </in_commods>
+       <recipe_name>kr85_recipe</recipe_name>
+       <avg_qty>13000</avg_qty>
+       <sigma>0</sigma>
+       <social_behav>Every</social_behav>
+       <behav_interval>20</behav_interval>
+     </Sink>
+   </config>
+ </facility>
+ 
+ 
+ <recipe>
+   <name>kr85_recipe</name>
+   <basis>atom</basis>
+   <nuclide> <id>Kr85</id> <comp>1.0</comp> </nuclide>
+ </recipe>
+ 
+ <region>
+   <name>SingleRegion</name>
+   <config><NullRegion/></config>
+   <institution>
+     <name>SingleInstitution</name>
+     <initialfacilitylist>
+       <entry>
+	 <prototype>PuSource</prototype>
+	 <number>1</number>
+       </entry>
+       <entry>
+	 <prototype>RG_Sep1</prototype>
+	 <number>1</number>
+       </entry>
+       <entry>
+ 	 <prototype>RG_Sep2</prototype>
+	 <number>1</number>
+       </entry>
+       <entry>
+ 	 <prototype>WG_Sep</prototype>
+	 <number>1</number>
+       </entry>
+     </initialfacilitylist>
+     <config><NullInst/></config>
+   </institution>
+ </region>
+
+ 
+</simulation>

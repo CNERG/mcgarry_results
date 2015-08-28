@@ -69,8 +69,8 @@
             <stream_commod>Diverted</stream_commod>
             <eff_sigma_freq>
               <val>0.1</val>
-              <val>0</val>
-              <val>1</val>
+              <val>0.05</val>
+              <val>-2</val>
             </eff_sigma_freq>
           </item>
           <item>

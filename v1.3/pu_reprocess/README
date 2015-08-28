@@ -1,0 +1,55 @@
+Simulations of Kr85 emissions from separations facilities.
+Emissions of Kr85 occur on a daily timescale, so simulation is calibrated
+to average single-day output for real facilities (using example numbers from
+Kemp, Jour. Environ. Radioactivity, 2008)
+
+
+reprocess.* (branch develop ?)
+------------------------------
+???
+
+Concept: Visualize separations facility with multiple streams
+
+Results:
+cyclist_reprocess.xml
+reprocess_diagram.png
+
+
+One_source.*  (branch Random_sep) 
+Analysis done with source branch of ~/git/data_analysis/Kr85_emissions.py
+---------------------------------
+2015-8-25
+
+Concept: A separations facility has an undeclared stream of material
+being diverted as weapons-grade Pu (possibly faulty premise).
+
+Implementation: One separations facility with three streams: Pu, diverted,
+waste. Post-processing tracks the emissions from Pu stream, showing variation.
+
+Results:
+Kr85_one_source.xml
+one_source.sqlite - inspector signal is declared Pu production
+one_source.mp4 - plots dispersion of Kr85 emission from the source
+	       	 of the declared Pu stream
+
+
+Multi_source.* (branch random_sink1.3, merged w/develop 27-aug)
+Analysis done with multi_source branch of Kr85_emissions.py
+---------------------------------------------------------------
+2015-8-28
+
+Concept: 3 separations facilities with Kr85 emissions signals, one of
+which is clandestine (ie. weapons grade Pu produces different amplitude
+Kr emissions for same quantity processed compared with reactor-grade)
+
+Implementation: 3 sinks requesting material from one Pu source - sink
+inventories are considered emission-sources.
+
+results:
+Kr85_multi_source.xml
+multi_source.sqlite - covert facility puffs Kr85 every 5 days
+(multi_source_slow.sqlite - (no movie) covert facility puffs Kr85 every 20 days)
+multi_source_1.mp4 - movie of just the covert facility's emissions
+multi_source_2.mp4 - movie of just the emissions from declared facilities
+multi_source_3.mp4 - composite movie with emissions from all 3 facilities
+
