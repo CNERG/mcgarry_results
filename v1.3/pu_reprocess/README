@@ -40,16 +40,69 @@ Analysis done with multi_source branch of Kr85_emissions.py
 
 Concept: 3 separations facilities with Kr85 emissions signals, one of
 which is clandestine (ie. weapons grade Pu produces different amplitude
-Kr emissions for same quantity processed compared with reactor-grade)
+Kr emissions for same quantity processed compared with reactor-grade).
+Diffusion model: simple 1/r^2
 
 Implementation: 3 sinks requesting material from one Pu source - sink
 inventories are considered emission-sources.
 
-results:
+Results:
 Kr85_multi_source.xml
 multi_source.sqlite - covert facility puffs Kr85 every 5 days
 (multi_source_slow.sqlite - (no movie) covert facility puffs Kr85 every 20 days)
 multi_source_1.mp4 - movie of just the covert facility's emissions
 multi_source_2.mp4 - movie of just the emissions from declared facilities
 multi_source_3.mp4 - composite movie with emissions from all 3 facilities
+
+
+
+Analysis done with simple_velocity branch of Kr85_emissions.py
+---------------------------------------------------------------
+2015-9-4
+
+Concept: 3 separations facilities with Kr85 emissions signals, one of
+which is clandestine (ie. weapons grade Pu produces different amplitude
+Kr emissions for same quantity processed compared with reactor-grade).
+Add wind to simple 1/r^2 diffusion model. Particle flux is not conserved
+(ie. if wind is stronger than diffusion, then any 'flux' going against
+the wind direction is 'lost'.)
+
+Implementation: 3 sinks requesting material from one Pu source - sink
+inventories are considered emission-sources.
+
+Results:
+(using multi_source.sqlite)
+wind45_v15.mp4 - composite movie with emissions from all 3 facilities:
+	       diffusion rate = 1.5,
+	       wind speed 1.5*diffusion rate,
+	       wind direction 45 degrees (off vertical)
+
+
+Analysis done with simple_velocity branch of Kr85_emissions.py
+proper_diffusion function has been added.
+---------------------------------------------------------------
+2015-9-8
+
+Concept: 3 separations facilities with Kr85 emissions signals, one of
+which is clandestine (ie. weapons grade Pu produces different amplitude
+Kr emissions for same quantity processed compared with reactor-grade).
+Use a representative composite plume + puff diffusion model taken from
+Handbook on Atmospheric Diffusion.  Wind is in the x-direction only.
+
+Implementation: 3 sinks requesting material from one Pu source - sink
+inventories are considered emission-sources.
+
+Results:
+(using multi_source.sqlite)
+proper_difF_wind10x.mp4 - composite movie with emissions from all 3 facilities:
+		       diffusion rate = 0.15,
+	       	       wind speed 10*diffusion rate,
+
+Other parameters (epsilon, time definition) are somewhat arbitrary. I tried
+converting everything to kg per unit time (where time was not redefined), but
+it did not converge.  It's possible that time must be explicitly converted
+from sec to days, but I don't see why this is necessary.
+
+
+
 
