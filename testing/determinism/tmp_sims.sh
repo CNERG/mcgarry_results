@@ -1,5 +1,5 @@
 #!/bin/bash
-X=1000
+X=100
 
 for i in $(seq $X); do
     out=run-${i}.sqlite

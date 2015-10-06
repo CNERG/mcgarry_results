@@ -1,6 +1,10 @@
-ef_behavior
-random_sink/bad_csv
-random_sink/unused
-random_sink/fourier_test/non_determ
-random_sink/png/old
+v1.2/ef_behavior
+v1.2/random_sink/bad_csv
+v1.2/random_sink/unused
+v1.2/random_sink/fourier_test/non_determ
+v1.2/random_sink/png/old
+v1.2/random_sink/png/old2
+testing
 *~
+UM_data
+v1.3/pu_reprocess/tmp
