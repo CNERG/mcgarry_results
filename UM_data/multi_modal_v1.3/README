@@ -1,0 +1,35 @@
+Starting Point
+--------------
+Cyclus Develop: e94a5a3b10131d39c88e77a21dfc36074b0d29d6  (Nov 20 2015)
+Cycamore Random_sink1.3 b55005a760ba29702e8b16fc1c9e476840a5f4c2 (Dec 2 2015)
+	 --- included merged Cycamore develop (Aug 28 2015)
+
+
+
+Goal
+----
+Dataset for UM containing power consumption and LEU shipped, where SWU is
+not constrained and power consumption has gaussian variation.  Enrichment
+level of LEU produced also varies with a discrete # of levels (3-5%).
+Possibly also vary HEU amplitude.
+
+Modifications
+-------------
+1) Create xml with correct facilities to simulate variation in power consumed
+due to variation in tails assay.
+    a) variation in LEU Qty requested (gaussian)
+    b) variation in Tails (gaussian)
+
+2a) Single sink with discrete varying enrichment levels
+OR
+2b) Multiple sinks with discrete enrichment levels
+   a) RNG assign preference for each facility so that trade goes through
+      	  for different enrichment levels each time
+   b) For each not-chosen facility, set preference to zero for the timestep
+   c) for this case a custom query is needed to provide total shipment table:
+      {
+         "facflow": "SELECT tl.Time AS Time,TOTAL(sub.qty) AS Quantity FROM timelist as tl LEFT JOIN ( SELECT t.simid AS simid,t.time as time,SUM(c.massfrac*r.quantity) as qty FROM transactions AS t JOIN resources as r ON t.resourceid=r.resourceid AND r.simid=t.simid JOIN agents as send ON t.senderid=send.agentid AND send.simid=t.simid JOIN agents as recv ON t.receiverid=recv.agentid AND recv.simid=t.simid JOIN compositions as c ON c.qualid=r.qualid AND c.simid=r.simid WHERE send.agentid=? AND recv.agentid=? GROUP BY t.time) AS sub ON tl.time=sub.time AND tl.simid=sub.simid GROUP BY tl.Time;"
+	}
+       ​cyan -db db.sqlite -custom query.json facflow min_FacID# max_FacID#
+
+3) Add HEU facility
