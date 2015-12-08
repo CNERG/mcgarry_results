@@ -15,7 +15,7 @@ varies with a discrete # of levels (3-5%). Possibly also vary HEU amplitude.
 
 Dataset
 -------
-# simulations: 1000
+# simulations: 100
 # timesteps: 2000
 signal guaranteed to be baseline for t< 1000
 
