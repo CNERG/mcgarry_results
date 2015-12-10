@@ -36,5 +36,6 @@ Cyclus Details
 --------------
 - variation in power consumption implemented as gaussian on tails enrichment
 (feature must be added)
-- only one Reactor requests material per timestep
-(feature must be added - either set other prefs to zero or implement exclusive trading with just enough SWU capacity to meet any single requests but not meet multiple requests)
+- only one LEU enrichment level requested per timestep
+(feature must be added)
+Implement as single reactor with varying enrichment levels
