@@ -1,0 +1,1 @@
+{"enrichlevels": " SELECT TimeCreated, MassFrac FROM Resources,Compositions WHERE Compositions.QualId = Resources.QualId and Compositions.NucID=922350000 and Compositions.QualId <>1"}
