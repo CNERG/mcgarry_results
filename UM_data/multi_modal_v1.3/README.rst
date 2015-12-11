@@ -60,4 +60,12 @@ Sample to UM:  fulltest_HEU_every.sqlite
 - Tails 0.2+/-0.1%, constrained Gaussian
 - LEU quantity 33+/-0.5kg, standard Gaussian
 
+Sample to UM:  8_enrich.sqlite
+-------------
+- HEU transfers randomly after t= 1000
+- HEU quantity 0.03kg, 90% U235
+- Enrichments 3-5%, discrete steps of 0.3%
+- Tails 0.2+/-0.1%, constrained Gaussian
+- LEU quantity 33+/-0.66kg, standard Gaussian
+
 

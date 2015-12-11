@@ -1,4 +1,4 @@
-8-Dec-2015
+11-Dec-2015
 
 Goal
 ----
@@ -10,7 +10,8 @@ Simulation
 Dataset for UM containing power consumption and LEU shipped, where SWU is
 not constrained and power consumption has gaussian variation (caused by
 variaion in U-235 content of tails).  Enrichment level of LEU produced also
-varies with a discrete # of levels (3-5%). Possibly also vary HEU amplitude.
+varies with a discrete # of levels (3-5%, with steps of 0.3%).
+Possibly also vary HEU amplitude.
 
 
 Dataset
@@ -38,4 +39,3 @@ Cyclus Details
 (feature must be added)
 - only one LEU enrichment level requested per timestep
 (feature must be added)
-Implement as single reactor with varying enrichment levels
