@@ -7,3 +7,6 @@ for fac_id in 15 16; do
     ~/git/data_analysis/data/cyanb -db $1 -custom query.json facinv $fac_id > $fname
 done;
 
+~/git/data_analysis/data/cyanb -db $1 -custom enrich_level.json enrichlevels >> EL_${1}.dat
+
+~/git/data_analysis/data/cyanb -db $1 table TimeSeriesEnrichmentSWU >> PWR_${1}.dat
