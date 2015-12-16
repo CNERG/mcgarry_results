@@ -47,7 +47,7 @@ Testing Results
 ---------------
 - Variation in tails from 0.1-0.3% results in a SWU range of 237-396
 (test_tails_on2.sqlite)
-- Variation in HEU production from 0 to 0.03kg results in SWU range 6-292 SWU
+- HEU production of 0.03kg uses 6.8 SWU
 (test_swu_heu.sqlite)
 - 5 different enrichments 3,3.5,4,4.5,5% results in SWU range 142-292
 (test_recipe_multi5x.sqlite)
