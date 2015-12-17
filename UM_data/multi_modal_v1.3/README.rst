@@ -52,8 +52,11 @@ Testing Results
 - 5 different enrichments 3,3.5,4,4.5,5% results in SWU range 142-292
 (test_recipe_multi5x.sqlite)
 
-Sample to UM:  fulltest_HEU_every.sqlite
+Sample to UM:  fulltest_HEU_every.sqlite  --> mm_5enrich.sqlite
 -------------
+** 'fulltest_HEU_every' accidentally had Tails sigma set to 0.0  **
+** Replaced with 'mm_5enrich' on 17-Dec-2015 **
+
 - HEU transfers every 5 timesteps after t=20
 - HEU quantity 0.03kg, 90% U235
 - Enrichments 3-5%, discrete
