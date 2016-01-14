@@ -25,6 +25,7 @@ Signals to UM
 --------------
 - Power consumption vs time (proxied by SWU consumption)
 - LEU shipped from Enrichment vs time
+- Shipping Frequency (delta time since last shipment, fractional granularity)
 
 
 Signals available upon request

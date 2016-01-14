@@ -71,4 +71,14 @@ Sample to UM:  8_enrich.sqlite
 - Tails 0.2+/-0.1%, constrained Gaussian
 - LEU quantity 33+/-0.66kg, standard Gaussian
 
+Sample to UM:  mm_5enrich_lowtails.sqlite
+-------------
+** 14 Jan 2016 **
 
+- HEU transfers every 5 timesteps after t=20
+- HEU quantity 0.03kg, 90% U235
+- Enrichments 3-5%, discrete
+- Tails 0.2+/-0.02%, constrained Gaussian
+- LEU quantity 33+/-0.5kg, standard Gaussian
+
+- Send 'shipped frequency'
