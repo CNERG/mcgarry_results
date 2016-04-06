@@ -12,3 +12,5 @@ done;
 ~/git/data_analysis/data/cyanb -db $1 -custom query.json enrichlevels >> EL_${1}.dat
 
 ~/git/data_analysis/data/cyanb -db $1 table TimeSeriesEnrichmentSWU >> PWR_${1}.dat
+
+~/git/data_analysis/data/cyanb -db $1 table Inspections >> Inspect_${1}.dat
