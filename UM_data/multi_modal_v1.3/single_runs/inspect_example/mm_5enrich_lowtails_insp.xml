@@ -1,6 +1,6 @@
 <simulation>
   <control>
-    <duration>100</duration>
+    <duration>200</duration>
     <startmonth>1</startmonth>
     <startyear>2000</startyear>
   </control>
@@ -57,8 +57,8 @@
 	<recipe_name>heu_recipe</recipe_name>
 	<avg_qty>0.03</avg_qty>
 	<sigma>0</sigma>
-	<social_behav>Every</social_behav>
-	<behav_interval>5</behav_interval>
+	<social_behav>Random</social_behav>
+	<behav_interval>3</behav_interval>
 	<rng_seed>1</rng_seed>
 	<user_pref>8</user_pref>
 	<t_trade>20</t_trade>
@@ -80,8 +80,8 @@
 	<heu_ship_qty>0.1</heu_ship_qty>
 	<inspect_freq>6</inspect_freq>
 	<n_swipes>10</n_swipes>
-	<false_pos>0.2</false_pos>
-	<false_neg>0.1</false_neg>
+	<false_pos>0.3</false_pos>
+	<false_neg>0.3</false_neg>
 	<rng_seed>1</rng_seed>
        </RandomEnrich>
     </config>
