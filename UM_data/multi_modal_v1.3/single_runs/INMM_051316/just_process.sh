@@ -6,7 +6,7 @@ echo ' {"facinv": " SELECT tl.Time AS Time,IFNULL(sub.qty, 0) AS Quantity FROM t
 for fac_id in 15 16; do
     fname=${fac_id}_${1}.dat
     ~/git/data_analysis/data/cyanb -db $1 -custom query.json facinv $fac_id > $fname
-    python -c "from manip_data import ship_freq; intervals,extra=ship_freq(\"$fname\", 100 ,\"SHIP_${fname}\")"
+    python -c "from manip_data import ship_freq; intervals,extra=ship_freq(\"$fname\", 3 ,\"SHIP_${fname}\")"
 done;
 
 ~/git/data_analysis/data/cyanb -db $1 -custom query.json enrichlevels >> EL_${1}.dat

@@ -93,10 +93,10 @@ Mbmore Source: 0d14f879928afb75fec5cbc55a5239a33251bc89 (Mar 31 2016)
 
 ** Apr 1, 2016 **
 
-- HEU transfers every 5 timesteps after t=20
+- HEU transfers every 3 timesteps after t=20
 - HEU quantity 0.03kg, 90% U235
 - Enrichments 3-5%, discrete
 - Tails 0.2+/-0.02%, constrained Gaussian
 - LEU quantity 33+/-0.5kg, standard Gaussian
 
-- Add Inspections: 20% false +, 10% false -, 10insp/swipe, every ~6months
+- Add Inspections: 30% false +, 30% false -, 10insp/swipe, every ~6months
