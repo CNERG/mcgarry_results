@@ -1,0 +1,17 @@
+Test Scenarios
+-------------
+100 timesteps
+
+Status Quo		Multi-Lateral
+----------------------------------------
+Enrichment    ++   	Enrichment     0
+Sci Network  Low	Sci Network   ++
+Conflict  Random	Conflict     Low
+
+
+Goal: Does Status Quo behave as expected for extrema?
+      Does Multi-lat behave as expected for extrema?
+1) 2 States - All factors Constant = 1  (including conflict)
+2) 2 States - All factors Constant = 10 (including conflict)
+3) 2 States - All factors Constant = 1  (except conflict)
+

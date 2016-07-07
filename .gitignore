@@ -10,4 +10,4 @@ UM_data/initial_tests_v1.2/png
 UM_data/initial_tests_v1.2/v13_example
 UM_data/multi_modal_v1.3/testing
 v1.3/pu_reprocess/tmp
-v1.3/multi_lat/testing/*sqlite
+v1.3/multi_lat/tests/*sqlite
