@@ -15,3 +15,5 @@ Goal: Does Status Quo behave as expected for extrema?
 2) 2 States - All factors Constant = 10 (including conflict)
 3) 2 States - All factors Constant = 1  (except conflict)
 
+Notes: High Pursuit Score results in weapons building too quickly.
+Need to add in a time delay/unpredictability due to acquire success.
