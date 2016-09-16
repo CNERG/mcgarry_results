@@ -1,0 +1,7 @@
+Making diagrams with Blockdiag
+(installed with pip)
+
+To produce a default png file:
+
+> blockdiag filename.diag
+

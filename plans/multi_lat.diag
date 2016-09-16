@@ -1,0 +1,90 @@
+blockdiag {
+//   default_fontsize = 16 ;
+//  default_node_color = white;
+  default_group_color = white;
+  default_linecolor = black;
+  default_textcolor = black;
+
+
+   // Set labels to nodes.
+   AI [label = "Cyclus Region+Inst"];
+   BI [label = "Identify 8 factors, estimate PE weights"];
+   CI [label = "Ad-hoc test vs historical data"];
+   DI [label = "Add PE, define fn to convert to 0/1 decision"];
+   EI [label = "Add time dynamics"];
+   FI [label = "Add conflict"];
+   GI [label = "Ieedback: if NW then change neighbor conflict"];
+   HI [label = "P == A == 1 S.Q. HEU"];
+   II [label = "metrics: Tme to 1st prolif, avg time to prolif, # prolifs"];
+   JI [label = "Scenarios: simple extrema"];
+   KI [label = "Run Integration Tests + Analyze!"];
+
+//   AF [label = "Cyclus Region+Inst"];
+   BF [label = "Use P.S. lit to identify factors, eqn weights"];
+
+   CF [label = "Regression test weights with historical data"];
+   DF [label = "Add PE+AE, convert to 0/1 decision"];
+   EF [label = "Add time dynamics"];
+   FF [label = "Add cross-talk mechanisms: conflict"];
+   GF [label = "Add feedback"];
+   HF [label = "Add material tracking during HEU production"];
+   IF [label = "Post-process tools for statistical analysis: define Global Risk"];
+   JF [label = "Define scenarios"];
+   KF [label = "Run Scenarios and Analyze results"];
+   
+   B1 [label = "Expert Opinion"];
+   B2 [label = "Define AE weights"];
+   C1 [label = "Identify PS techniques for regression testing"];
+   C2 [label = ""];
+   D1 [label = "Test 0/1 conversion algorithm"];
+   D2 [label = "Add AE to cyclus"];
+   E1 [label = "Expand function forms"];
+   E2 [label = ""];
+   F1 [label = "use network to create crosstalk"];
+   F2 [label = "formalize network to UCB model"];
+   G1 [label = "if NW then change Mil Sp"];
+   G2 [label = "if ? then change Iso"];
+   H2 [label = "Tie qty HEU produced to AE"];
+   H1 [label = ""];
+   I1 [label = "Characterize Global Risk from distribution"];
+   I2 [label = ""];
+   J1 [label = "Historical scenario tests"];
+   J2 [label = "multi.lat. vs status quo"];
+   
+
+   // box colors
+    AI, BI, CI, DI, EI, FI, GI, HI, II, JI, KI [color = "lightgreen"];
+
+    // place-holder boxes
+    C2, E2, H1, I2 [color = "none"];
+//    C2, E2, H1, I2 [style = "none"];
+
+//    F1 [color = "lightgreen"];
+    C1, E1, KI [color = "lightblue"];
+    BF, CF, DF, EF, FF, GF, HF, IF, JF, KF [color = "#AD8BBF"];
+
+
+// layout
+//   AI -> AF;
+   BI -> B1 -> B2 -> BF;
+   CI -> C1 -> C2 -> CF;
+   DI -> D1 -> D2 -> DF;
+   EI -> E1 -> E2 -> EF;
+   FI -> F1 -> F2 -> FF;
+   GI -> G1 -> G2 -> GF;
+   HI -> H1 -> H2 -> HF;
+   II -> I1 -> I2 -> IF;
+   JI -> J1 -> J2 -> JF;
+
+   group {
+   	 orientation = portrait
+	    AI -> BI -> CI -> DI -> EI -> FI -> GI -> HI -> II -> JI -> KI;
+   }	    
+
+   group {
+      orientation = portrait
+      BF -> CF -> DF -> EF -> FF -> GF -> HF -> IF -> JF -> KF;
+    }
+
+}
+
