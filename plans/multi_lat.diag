@@ -23,29 +23,29 @@ blockdiag {
    BF [label = "Use P.S. lit to identify factors, eqn weights"];
 
    CF [label = "Regression test weights with historical data"];
-   DF [label = "Add PE+AE, convert to 0/1 decision"];
-   EF [label = "Add time dynamics"];
-   FF [label = "Add cross-talk mechanisms: conflict"];
-   GF [label = "Add feedback"];
-   HF [label = "Add material tracking during HEU production"];
-   IF [label = "Post-process tools for statistical analysis: define Global Risk"];
-   JF [label = "Define scenarios"];
+   DF [label = "PE converted to 0/1 decision"];
+   EF [label = "Time dynamics Included"];
+   FF [label = "Crosstalk Included"];
+   GF [label = "Feedback Included"];
+   HF [label = "Qty HEU produced tied to AE"];
+   IF [label = "Calculate Global Risk"];
+   JF [label = "Define Scenarios"];
    KF [label = "Run Scenarios and Analyze results"];
    
    B1 [label = "Expert Opinion"];
    B2 [label = "Define AE weights"];
    C1 [label = "Identify PS techniques for regression testing"];
    C2 [label = ""];
-   D1 [label = "Test 0/1 conversion algorithm"];
-   D2 [label = "Add AE to cyclus"];
+   D1 [label = "Test algorithm w/ historical"];
+   D2 [label = ""];
    E1 [label = "Expand function forms"];
    E2 [label = ""];
    F1 [label = "use network to create crosstalk"];
    F2 [label = "formalize network to UCB model"];
    G1 [label = "if NW then change Mil Sp"];
    G2 [label = "if ? then change Iso"];
-   H2 [label = "Tie qty HEU produced to AE"];
-   H1 [label = ""];
+   H2 [label = "Add AE to Cyclus"];
+   H1 [label = "Define time to weapon"];
    I1 [label = "Characterize Global Risk from distribution"];
    I2 [label = ""];
    J1 [label = "Historical scenario tests"];
@@ -56,20 +56,20 @@ blockdiag {
     AI, BI, CI, DI, EI, FI, GI, HI, II, JI, KI [color = "lightgreen"];
 
     // place-holder boxes
-    C2, E2, H1, I2 [color = "none"];
+    C2, E2, D2,I2 [color = "none"];
 //    C2, E2, H1, I2 [style = "none"];
 
 //    F1 [color = "lightgreen"];
-    C1, E1, KI [color = "lightblue"];
+    C1, D1, E1, KI [color = "lightblue"];
     BF, CF, DF, EF, FF, GF, HF, IF, JF, KF [color = "#AD8BBF"];
 
 
 // layout
 //   AI -> AF;
    BI -> B1 -> B2 -> BF;
-   CI -> C1 -> C2 -> CF;
+   CI -> C1 -- C2 -> CF;
    DI -> D1 -> D2 -> DF;
-   EI -> E1 -> E2 -> EF;
+   EI -> E1 -- E2 -> EF;
    FI -> F1 -> F2 -> FF;
    GI -> G1 -> G2 -> GF;
    HI -> H1 -> H2 -> HF;
@@ -78,12 +78,12 @@ blockdiag {
 
    group {
    	 orientation = portrait
-	    AI -> BI -> CI -> DI -> EI -> FI -> GI -> HI -> II -> JI -> KI;
+	    AI -> BI -> CI -> DI -> EI -- FI -> GI -- HI -- II -> JI -> KI;
    }	    
 
    group {
       orientation = portrait
-      BF -> CF -> DF -> EF -> FF -> GF -> HF -> IF -> JF -> KF;
+      BF -> CF -> DF -> EF -- FF -- GF -- HF -> IF -> JF -> KF;
     }
 
 }

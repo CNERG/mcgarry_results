@@ -1,0 +1,82 @@
+blockdiag {
+//   default_fontsize = 16 ;
+//  default_node_color = white;
+  default_group_color = white;
+  default_linecolor = black;
+  default_textcolor = black;
+
+  // Set labels to nodes.
+  AI [label = "Reactor Thermal Sig."];
+  BI [label = ""];
+  CI [label = "power produced"];
+  DI [label = "Sat DB: freq, res, spectral"];
+  EI [label = "Event DB: Thermal On, Trucks, People"];
+  FI [label = "Facility DB: buildings, towers, ponds, roads"];
+
+
+
+  AM [label = "Define Scenario"];
+  BM [label = "Design & Run Cyclus"];
+  CM [label = "Convert Sig. To Discrete Instances"];
+  DM [label = "Query DB: Sat observing features"];
+  EM [label = "Query DB: Event-based features"];
+  FM [label = "Query DB: Facility features"];
+  GM [label = "Table of Observed Features"];
+  HM [label = "No Confounding features"];  // confounding features
+  IM [label = ""];  // build image
+  JM [label = ""];  // send to UM
+  KM [label = "Anomaly Detection"];
+
+
+  HF1 [label = "change orientation of fixed features"];
+  HF2 [label = "unexpected random features"];
+  HF3 [label = "Include Confounding Features"];
+  IF1 [label = ""];
+  IF2 [label = "change resolution"];  
+  IF3 [label = "Build Satellite Image"];
+  JF1 [label = ""];
+  JF2 [label = "Add. modalities in dataset"];
+  JF3 [label = "Send Dataset to UM"];
+  KF3 [label = "Anomaly Detection"];
+  
+
+   // box colors
+   AM, BM, CM, DM, EM, FM, GM, HM, IM, JM, KM [color = "white"];
+
+   // place-holder boxes
+   BI, IM, IF1, JF1, JM [color = "none"];
+
+   AI, BM, CI, DI, EI, FI [color = "lightblue"];   
+   AM, CM, DM, EM, FM, GM, HF3, IF3, JF3, KF3 [color="#AD8BBF"];
+
+   // layout
+   AI -- AM;
+   BI -- BM;
+   CI -- CM;
+   DI -> DM;
+   EI -> EM;
+   FI -> FM;
+ 
+
+
+   HM -> HF1 -> HF2 -> HF3;
+   IM -> IF1 -> IF2 -> IF3;
+   JM -> JF1 -> JF2 -> JF3;
+
+   group {
+         orientation = portrait
+   	    AM -> BM -> CM -> DM -> EM -> FM -> GM -> HM -> IM -> JM -> KM;
+   }
+
+   group {
+   	 color = "none"
+   	 orientation = portrait
+	 AI -- BI -- CI -- DI -- EI -- FI ;
+   }
+   group {
+   	 color = "none"
+   	 orientation = portrait
+	 HF3 -> IF3 -> JF3 -> KF3;
+   }
+
+}
