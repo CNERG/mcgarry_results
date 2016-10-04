@@ -1,0 +1,102 @@
+blockdiag {
+//   default_fontsize = 16 ;
+//  default_node_color = white;
+  default_group_color = white;
+  default_linecolor = black;
+  default_textcolor = black;
+
+  // Set labels to nodes.
+  AI [label = "Reactor Pool Thermal Sig"];
+  BI [label = "Input file:1 Reactor w/Thermal On Off"];
+  CI [label = "No Thermal Signal"];
+  DI [label = "Sat DB: fixed pixel size, N pixels, image dimen."];
+  EI [label = "No Event"];
+  FI [label = "Object DB: water/land boundary, 1 plume"];
+  fgI [label = "plume fixed in water"];
+  GI [label = "Observed Objects: size, shape, location"];
+  HI [label = ""];
+  II [label = "Build Image tiff"];
+  JI [label = ""];
+//  KI [label = ""];
+
+  AM1 [label = "Reactor Tower Thermal Sig"];
+  BM1 [label = ""];
+  CM1 [label = "Thermal signal fixed On"];
+  DM1 [label = "Use relevant satellite params"];
+  EM1 [label = "Event DB: Plume On red"];
+  FM1 [label = "water/land, plume, 2 circles, 1 rect (fixed)"];
+  fgM1 [label = "Plume constrained to water"];
+  GM1 [label = "Observed Objects: +Color"];
+  HM1 [label = "unexpected random features at TOI"];
+  IM1 [label = "Realistic object shapes from external DB"];  
+  JM1 [label = "Add. modalities in dataset"];
+//  KM1 [label = ""];
+
+
+  AM2 [label = "Multiple Reactor Thermal Sigs"];
+  BM2 [label = ""];
+  CM2 [label = "Determine On/Off for TOI"];
+  DM2 [label = "Downsample resolution if needed"];
+  EM2 [label = "Plume size/shape fn of event?"];
+  FM2 [label = "set of allowed features (with rules)"];
+  fgM2 [label = "Assign feature locations randomly (with rules)"];
+  GM2 [label = ""];
+  HM2 [label = "Add shadows"];
+  IM2 [label = "Multi-spectral data"];
+  JM2 [label = "Expand to multiple facilities"];
+//  KM2 [label = ""];
+
+
+  AF [label = "Define Scenario"];
+  BF [label = "Design, Run Cyclus"];
+  CF [label = "Time of Interest(TOI): Signal On/Off"];
+  DF [label = "Query DB: Sat observing features"];
+  EF [label = "Query DB: Event-based features"];
+  FF [label = "Query DB: Fixed features"];
+  fgF [label = "Define Object locations"];
+  GF [label = "Table of Observed Features"];
+  HF [label = "Include Confounding Features at TOI"];
+  IF [label = "Build Satellite Image"];
+  JF [label = "Send Dataset to UM"];
+  KF [label = "Anomaly Detection"];
+  
+
+   // box colors
+    AF, BF, CF, DF, EF, FF, fgF, GF, HF, IF, JF, KF  [color="#AD8BBF"];
+
+   // place-holder boxes
+   HI, JI  [color = "none"];
+    BM1 [color = "none"];
+    BM2,  GM2 [color = "none"];
+
+   AI, BI, CI, DI, EI, FI, fgI, GI, II [color = "lightblue"];   
+//   AM, CM, DM, EM, FM, GM, HF, IF, JF, KF [color="#AD8BBF"];
+
+   // layout
+   AI -> AM1 -> AM2 -- AF;
+   BI -- BM1 -- BM2 -- BF;
+   CI -- CM1 -> CM2 -- CF;
+   DI -> DM1 -> DM2 -> DF;
+   EI -- EM1 -> EM2 -- EF;
+   FI -> FM1 -> FM2 -> FF;
+   fgI -> fgM1 -> fgM2 -> fgF;
+   GI -> GM1 -- GM2 -- GF;
+   HI -- HM1 -- HM2 -> HF;
+   II -> IM1 -> IM2 -> IF;
+   JI -- JM1 -> JM2 -> JF;
+
+//   KI -- KM1 -- KM2 -- KF;
+
+
+   group {
+      orientation = portrait
+      color = "none"
+	JF -> KF;
+	}
+   group {
+      orientation = portrait
+      color = "none"
+	AI -> BI -> CI -> DI -> EI -> FI -> fgI -> GI -- HI -> II ;
+	}
+
+ }
